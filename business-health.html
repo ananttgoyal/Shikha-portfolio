@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Business Health Assessment | Shikha Solutions</title>
+<meta name="description" content="Take the Shikha Solutions Business Health Assessment to identify founder dependency, accountability, process, sales, visibility and execution gaps." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f7f5f0;color:#1a1a1a;line-height:1.55}a{text-decoration:none;color:inherit}.wrap{max-width:920px;margin:auto;padding:24px}.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0}.brand{font-family:Fraunces,serif;font-size:1.2rem;font-weight:600}.back{font-size:.9rem;color:#2d5f5d}.hero{padding:56px 0 32px}.eyebrow{display:inline-block;background:#d9e6e4;color:#2d5f5d;border-radius:999px;padding:7px 12px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-family:Fraunces,serif;font-size:clamp(2.3rem,6vw,4rem);line-height:1.05;margin:18px 0 14px}.hero p{max-width:700px;color:#5a5a5a;font-size:1.05rem}.panel{background:#fff;border:1px solid #e3dccd;border-radius:20px;padding:26px;margin:22px 0}.progress{height:8px;background:#efeae0;border-radius:999px;overflow:hidden;margin:14px 0 8px}.bar{height:100%;width:0;background:#2d5f5d;transition:.25s}.meta{display:flex;justify-content:space-between;color:#8a8a8a;font-size:.85rem}.question{display:none}.question.active{display:block}.category{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#2d5f5d;font-weight:700;margin-bottom:10px}.question h2{font-family:Fraunces,serif;font-size:1.7rem;line-height:1.25;margin:0 0 22px}.options{display:grid;gap:10px}.option{width:100%;text-align:left;padding:14px 16px;border:1px solid #d9d2c5;background:#fff;border-radius:12px;font:inherit;cursor:pointer;transition:.15s}.option:hover,.option.selected{border-color:#2d5f5d;background:#edf4f3}.nav{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.btn{border:0;border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer}.primary{background:#2d5f5d;color:#fff}.secondary{background:#efeae0;color:#1a1a1a}.btn:disabled{opacity:.45;cursor:not-allowed}.intro-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}.pill{background:#fff;border:1px solid #e3dccd;border-radius:12px;padding:14px;font-size:.9rem}.results{display:none}.score-hero{display:grid;grid-template-columns:160px 1fr;gap:26px;align-items:center}.score-ring{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#2d5f5d var(--score),#efeae0 0)}.score-inner{width:118px;height:118px;background:#fff;border-radius:50%;display:grid;place-items:center;text-align:center}.score-num{font-family:Fraunces,serif;font-size:2.1rem;font-weight:600}.score-label{font-size:.72rem;color:#8a8a8a}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.metric{background:#fff;border:1px solid #e3dccd;border-radius:14px;padding:16px}.metric-head{display:flex;justify-content:space-between;gap:10px;font-weight:700}.meter{height:7px;background:#efeae0;border-radius:999px;overflow:hidden;margin:12px 0 7px}.meter span{display:block;height:100%;background:#2d5f5d}.status{font-size:.82rem;color:#6b6b6b}.alert{border-left:4px solid #9b4b3f;background:#fff7f5;padding:18px;border-radius:12px;margin:12px 0}.alert h3{margin:0 0 6px;font-family:Fraunces,serif}.cta{background:#2d5f5d;color:#fff;border-radius:18px;padding:26px;margin-top:24px}.cta h2{font-family:Fraunces,serif;margin-top:0}.cta p{color:#dbe9e7}.cta .btn{background:#fff;color:#2d5f5d;display:inline-block}.note{font-size:.82rem;color:#8a8a8a;margin-top:14px}@media(max-width:700px){.wrap{padding:18px}.hero{padding-top:32px}.intro-list,.grid{grid-template-columns:1fr}.score-hero{grid-template-columns:1fr}.score-ring{margin:auto}.panel{padding:20px}.nav{flex-direction:column-reverse}.nav .btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><div class="brand">Shikha Solutions</div><a class="back" href="/">← Back to website</a></div>
+
+  <section id="intro" class="hero">
+    <span class="eyebrow">3-minute diagnostic</span>
+    <h1>How healthy is your business — really?</h1>
+    <p>Answer 17 practical questions based on what happens in your business most of the time. You’ll receive an overall Business Health Score, six category scores, your top gaps, and alerts where a deeper conversation may help.</p>
+    <div class="intro-list">
+      <div class="pill">Founder Dependency</div><div class="pill">People & Accountability</div><div class="pill">Process & Operations</div><div class="pill">Sales & Growth</div><div class="pill">Numbers & Visibility</div><div class="pill">Execution & Improvement</div>
+    </div>
+    <p class="note">This is a directional diagnostic, not a financial, legal or professional audit.</p>
+    <button class="btn primary" onclick="startAssessment()">Check Your Business Health →</button>
+  </section>
+
+  <section id="assessment" class="panel" style="display:none">
+    <div class="meta"><span id="qCounter">Question 1 of 17</span><span id="categoryLabel"></span></div>
+    <div class="progress"><div id="progressBar" class="bar"></div></div>
+    <div id="questions"></div>
+    <div class="nav"><button id="prevBtn" class="btn secondary" onclick="prevQuestion()">← Back</button><button id="nextBtn" class="btn primary" onclick="nextQuestion()" disabled>Next →</button></div>
+  </section>
+
+  <section id="results" class="results">
+    <div class="panel score-hero">
+      <div id="scoreRing" class="score-ring"><div class="score-inner"><div><div id="overallScore" class="score-num">0</div><div class="score-label">OUT OF 100</div></div></div></div>
+      <div><span class="eyebrow">Your Business Health</span><h1 id="overallTitle" style="font-family:Fraunces,serif;margin:12px 0 6px"></h1><p id="overallText" style="color:#5a5a5a"></p></div>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-family:Fraunces,serif">Your six business health scores</h2>
+      <div id="metrics" class="grid"></div>
+    </div>
+
+    <div class="panel">
+      <h2 style="font-family:Fraunces,serif">Your top 3 business gaps</h2>
+      <div id="gaps"></div>
+    </div>
+
+    <div id="alertsPanel" class="panel" style="display:none">
+      <h2 style="font-family:Fraunces,serif">Important alerts from your answers</h2>
+      <div id="alerts"></div>
+    </div>
+
+    <div class="cta">
+      <h2>Let’s fix what’s actually broken.</h2>
+      <p>Your score identifies symptoms. A Business Health Call helps us understand what is causing the gap and what should be fixed first.</p>
+      <a class="btn" href="/#contact">Book a Business Health Call →</a>
+      <div class="note" style="color:#dbe9e7">No generic pitch — just a focused discussion around your biggest execution gap.</div>
+    </div>
+  </section>
+</div>
+
+<script>
+const answersLabels=['Always','Often','Sometimes','Rarely','Never'];
+const questions=[
+{id:1,cat:'Founder Dependency',positive:true,text:'My team can handle routine decisions without waiting for my approval.'},
+{id:2,cat:'Founder Dependency',positive:true,text:'When I am unavailable for a day or two, the business continues to operate smoothly.'},
+{id:3,cat:'Founder Dependency',positive:false,text:'Customers, employees, or managers frequently come directly to me to solve problems that someone else should be able to handle.',alert:'Founder Bottleneck Alert'},
+{id:4,cat:'People & Accountability',positive:true,text:'Every key employee clearly understands what they are responsible for and what results are expected from them.'},
+{id:5,cat:'People & Accountability',positive:true,text:'Tasks and projects have a clear owner who is accountable for completing them.'},
+{id:6,cat:'People & Accountability',positive:false,text:'I regularly need to remind or follow up with employees to make sure important work gets completed.',alert:'Accountability Alert'},
+{id:7,cat:'Process & Operations',positive:true,text:'Important recurring activities in the business follow a clear and repeatable process.'},
+{id:8,cat:'Process & Operations',positive:true,text:'My team can easily find the information, documents, or instructions they need to complete their work.'},
+{id:9,cat:'Process & Operations',positive:false,text:'The same operational mistakes or problems keep happening repeatedly.',alert:'Recurring Process Failure Alert'},
+{id:10,cat:'Sales & Customer Growth',positive:true,text:'We have a consistent process for following up with leads and potential customers.'},
+{id:11,cat:'Sales & Customer Growth',positive:true,text:'I can clearly see where our leads come from and how many eventually become customers.'},
+{id:12,cat:'Sales & Customer Growth',positive:false,text:'Our sales performance depends heavily on one person, including me.',alert:'Sales Dependency Alert'},
+{id:13,cat:'Numbers & Business Visibility',positive:true,text:'I regularly review a small set of business numbers that tell me whether the company is performing well.'},
+{id:14,cat:'Numbers & Business Visibility',positive:true,text:'I have clear visibility into sales, expenses, cash flow, and profitability without having to search for the information.'},
+{id:15,cat:'Execution & Improvement',positive:true,text:'When we identify a recurring business problem, we assign ownership, make a change, and check whether the change actually worked.'},
+{id:16,cat:'Execution & Improvement',positive:true,text:'When we start an improvement initiative, one person is clearly responsible for completing it.'},
+{id:17,cat:'Execution & Improvement',positive:true,text:'We review whether important changes actually improved the business rather than simply moving on to the next issue.'}
+];
+const categoryInfo={
+'Founder Dependency':'How much everyday decision-making and problem-solving still depends on the founder.',
+'People & Accountability':'How clearly ownership, expectations and follow-through are defined across the team.',
+'Process & Operations':'How consistently recurring work is executed without repeated errors or searching for information.',
+'Sales & Customer Growth':'How systematic and visible your lead-to-customer process is, and whether sales depend on one person.',
+'Numbers & Business Visibility':'How easily you can see the numbers needed to make timely business decisions.',
+'Execution & Improvement':'How consistently the business turns identified problems into owned, measured improvements.'
+};
+const alertCopy={
+'Founder Bottleneck Alert':'Your answers suggest too many day-to-day decisions or escalations may still be routing through you. That can slow execution and limit your capacity to focus on growth.',
+'Accountability Alert':'Your answers suggest important work may require repeated reminders or follow-ups. The issue may be unclear ownership, expectations, or review rhythm.',
+'Recurring Process Failure Alert':'Your answers suggest the same operational problems may be repeating. This usually points to a process, ownership, training, or feedback-loop gap.',
+'Sales Dependency Alert':'Your answers suggest sales performance may depend too heavily on one person. That can make growth less predictable and harder to scale.'
+};
+let current=0; const responses={};
+function startAssessment(){document.getElementById('intro').style.display='none';document.getElementById('assessment').style.display='block';renderQuestions();showQuestion(0);window.scrollTo({top:0,behavior:'smooth'});}
+function renderQuestions(){const root=document.getElementById('questions');root.innerHTML='';questions.forEach((q,i)=>{const d=document.createElement('div');d.className='question';d.id='q'+i;d.innerHTML=`<div class="category">${q.cat}</div><h2>${q.text}</h2><div class="options">${answersLabels.map((a,idx)=>`<button class="option" data-v="${idx}" onclick="selectAnswer(${i},${idx},this)">${a}</button>`).join('')}</div>`;root.appendChild(d);});}
+function selectAnswer(i,idx,el){responses[i]=idx;document.querySelectorAll('#q'+i+' .option').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');document.getElementById('nextBtn').disabled=false;}
+function showQuestion(i){current=i;document.querySelectorAll('.question').forEach((q,idx)=>q.classList.toggle('active',idx===i));document.getElementById('qCounter').textContent=`Question ${i+1} of ${questions.length}`;document.getElementById('categoryLabel').textContent=questions[i].cat;document.getElementById('progressBar').style.width=`${((i+1)/questions.length)*100}%`;document.getElementById('prevBtn').disabled=i===0;document.getElementById('nextBtn').textContent=i===questions.length-1?'See My Results →':'Next →';document.getElementById('nextBtn').disabled=responses[i]===undefined;}
+function nextQuestion(){if(responses[current]===undefined)return;if(current<questions.length-1)showQuestion(current+1);else calculateResults();}
+function prevQuestion(){if(current>0)showQuestion(current-1);}
+function rawScore(q,idx){const base=5-idx;return q.positive?base:6-base;}
+function normalized(total,count){return Math.round(((total-count)/(count*4))*100);}
+function status(score){if(score>=80)return 'Strong';if(score>=60)return 'Needs Optimization';if(score>=40)return 'Growth Constraint';return 'Priority Risk';}
+function overallDescriptor(score){if(score>=80)return ['Strong Business Foundation','Your business shows a relatively strong foundation. The opportunity is to strengthen weak spots and prepare the systems that will support the next stage of growth.'];if(score>=60)return ['Growth Friction','Your business is functioning, but some gaps may be creating unnecessary delays, founder involvement, or lost opportunities.'];if(score>=40)return ['Founder-Dependent Business','Several parts of the business may still depend too heavily on the founder, individual employees, or informal ways of working.'];return ['Business Foundation Needs Attention','Important systems, accountability, visibility, or execution mechanisms appear inconsistent and should be prioritised before adding more complexity.'];}
+function calculateResults(){let total=0;const catTotals={},catCounts={};questions.forEach((q,i)=>{const s=rawScore(q,responses[i]);total+=s;catTotals[q.cat]=(catTotals[q.cat]||0)+s;catCounts[q.cat]=(catCounts[q.cat]||0)+1;});const overall=Math.round(((total-questions.length)/(questions.length*4))*100);const cats=Object.keys(catTotals).map(cat=>({cat,score:normalized(catTotals[cat],catCounts[cat])})).sort((a,b)=>a.score-b.score);renderResults(overall,cats);}
+function renderResults(overall,cats){document.getElementById('assessment').style.display='none';document.getElementById('results').style.display='block';document.getElementById('overallScore').textContent=overall;document.getElementById('scoreRing').style.setProperty('--score',overall+'%');const [title,text]=overallDescriptor(overall);document.getElementById('overallTitle').textContent=title;document.getElementById('overallText').textContent=text;document.getElementById('metrics').innerHTML=cats.map(x=>`<div class="metric"><div class="metric-head"><span>${x.cat}</span><span>${x.score}/100</span></div><div class="meter"><span style="width:${x.score}%"></span></div><div class="status">${status(x.score)}</div></div>`).join('');document.getElementById('gaps').innerHTML=cats.slice(0,3).map((x,i)=>`<div class="metric" style="margin:10px 0"><div class="metric-head"><span>#${i+1} ${x.cat}</span><span>${x.score}/100</span></div><p style="color:#5a5a5a;margin:8px 0 0">${categoryInfo[x.cat]}</p></div>`).join('');const alerts=[];questions.forEach((q,i)=>{if(q.alert && responses[i]<=1)alerts.push(q.alert);});if(alerts.length){document.getElementById('alertsPanel').style.display='block';document.getElementById('alerts').innerHTML=alerts.map(a=>`<div class="alert"><h3>${a}</h3><p>${alertCopy[a]}</p><a href="/#contact" class="btn primary">Book a Business Health Call →</a></div>`).join('');}window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>
