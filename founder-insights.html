@@ -25,6 +25,7 @@
 </main>
 <footer class="footer"><div class="container footer-inner"><div><strong>Shikha Solutions</strong><br>Building People. Building Businesses. Creating Impact.</div><div>© <span id="year"></span> Shikha Solutions</div></div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();const menu=document.getElementById('menu'),nav=document.getElementById('navLinks');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));</script>
+<script>(function(){const routes={"#dependency-detail":"insight-founder-dependency.html","#people-teams":"insight-people-teams.html","#process-operations":"insight-process-operations.html","#sales-growth":"insight-sales-growth.html","#finance-decisions":"insight-finance-decisions.html","#delegation-detail":"insight-delegation-boundaries.html","#execution-detail":"insight-execution-rhythm.html"};document.querySelectorAll(".read-link").forEach(link=>{const route=routes[link.getAttribute("href")];if(route){link.href=route;link.textContent=link.closest(".featured-body")?"Read the full insight →":"Read the article →"}})})();</script>
 </body>
 </html>
 
