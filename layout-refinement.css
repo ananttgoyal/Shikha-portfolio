@@ -22,4 +22,8 @@
   .home-page .nav-links,.insights-page .nav-links{gap:22px}
   .home-page .nav-links a,.insights-page .nav-links a{font-size:.92rem}
 }
-
+.brand-tagline{width:100%;display:grid!important;gap:1px;text-align:center;white-space:normal!important;font-size:.54rem!important;line-height:1.22!important;letter-spacing:.11em!important}
+.brand-tagline-line{display:block;white-space:nowrap}
+.hero-title-line{display:block!important;white-space:nowrap}
+@media(max-width:1180px) and (min-width:901px){.brand-lockup{width:250px!important}.brand-tagline{font-size:.49rem!important;letter-spacing:.07em!important}.hero-title-line{white-space:normal}}
+@media(max-width:700px){.brand-tagline{display:none!important}.hero-title-line{display:block!important;white-space:normal}.home-page .hero h1{font-size:clamp(2.15rem,10vw,2.7rem)!important}}
