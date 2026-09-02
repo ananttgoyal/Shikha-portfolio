@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.shikhasolutions.com/sitemap.xml
+
+# AI crawler access is intentionally not given a separate blanket policy here.
+# Review named AI user agents against content and commercial policy before changing this file.
