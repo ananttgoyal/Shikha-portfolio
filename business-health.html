@@ -12,6 +12,7 @@
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f7f5f0;color:#1a1a1a;line-height:1.55}a{text-decoration:none;color:inherit}.wrap{max-width:920px;margin:auto;padding:24px}.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0}.brand{font-family:Fraunces,serif;font-size:1.2rem;font-weight:600}.back{font-size:.9rem;color:#2d5f5d}.hero{padding:56px 0 32px}.eyebrow{display:inline-block;background:#d9e6e4;color:#2d5f5d;border-radius:999px;padding:7px 12px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-family:Fraunces,serif;font-size:clamp(2.3rem,6vw,4rem);line-height:1.05;margin:18px 0 14px}.hero p{max-width:700px;color:#5a5a5a;font-size:1.05rem}.panel{background:#fff;border:1px solid #e3dccd;border-radius:20px;padding:26px;margin:22px 0}.progress{height:8px;background:#efeae0;border-radius:999px;overflow:hidden;margin:14px 0 8px}.bar{height:100%;width:0;background:#2d5f5d;transition:.25s}.meta{display:flex;justify-content:space-between;color:#8a8a8a;font-size:.85rem}.question{display:none}.question.active{display:block}.category{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#2d5f5d;font-weight:700;margin-bottom:10px}.question h2{font-family:Fraunces,serif;font-size:1.7rem;line-height:1.25;margin:0 0 22px}.options{display:grid;gap:10px}.option{width:100%;text-align:left;padding:14px 16px;border:1px solid #d9d2c5;background:#fff;border-radius:12px;font:inherit;cursor:pointer;transition:.15s}.option:hover,.option.selected{border-color:#2d5f5d;background:#edf4f3}.nav{display:flex;justify-content:space-between;gap:12px;margin-top:24px}.btn{border:0;border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px}.primary{background:#2d5f5d;color:#fff}.secondary{background:#efeae0;color:#1a1a1a}.btn:disabled{opacity:.45;cursor:not-allowed}.intro-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}.pill{background:#fff;border:1px solid #e3dccd;border-radius:12px;padding:14px;font-size:.9rem}.results{display:none}.score-hero{display:grid;grid-template-columns:160px 1fr;gap:26px;align-items:center}.score-ring{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#2d5f5d var(--score),#efeae0 0)}.score-inner{width:118px;height:118px;background:#fff;border-radius:50%;display:grid;place-items:center;text-align:center}.score-num{font-family:Fraunces,serif;font-size:2.1rem;font-weight:600}.score-label{font-size:.72rem;color:#8a8a8a}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.metric{background:#fff;border:1px solid #e3dccd;border-radius:14px;padding:16px}.metric-head{display:flex;justify-content:space-between;gap:10px;font-weight:700}.meter{height:7px;background:#efeae0;border-radius:999px;overflow:hidden;margin:12px 0 7px}.meter span{display:block;height:100%;background:#2d5f5d}.status{font-size:.82rem;color:#6b6b6b}.alert{border-left:4px solid #9b4b3f;background:#fff7f5;padding:18px;border-radius:12px;margin:12px 0}.alert h3{margin:0 0 6px;font-family:Fraunces,serif}.alert-actions,.cta-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.whatsapp{background:#1f6f5c!important;color:#fff!important}.booking{background:#fff!important;color:#2d5f5d!important;border:1px solid #d9e6e4!important}.cta{background:#2d5f5d;color:#fff;border-radius:18px;padding:26px;margin-top:24px}.cta h2{font-family:Fraunces,serif;margin-top:0}.cta p{color:#dbe9e7}.note{font-size:.82rem;color:#8a8a8a;margin-top:14px}@media(max-width:700px){.wrap{padding:18px}.hero{padding-top:32px}.intro-list,.grid{grid-template-columns:1fr}.score-hero{grid-template-columns:1fr}.score-ring{margin:auto}.panel{padding:20px}.nav{flex-direction:column-reverse}.nav .btn,.alert-actions .btn,.cta-actions .btn{width:100%}}
 </style>
+<style>.start-trust{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 18px}.start-trust span{background:#fff;border:1px solid #e3dccd;border-radius:999px;padding:8px 12px;color:#2d5f5d;font-size:.82rem;font-weight:600}.start-note{margin:10px 0 0!important;font-size:.82rem!important;color:#6f6f6f!important}</style>
 </head>
 <body>
 <div class="wrap">
@@ -20,16 +21,17 @@
   <section id="intro" class="hero">
     <span class="eyebrow">3-minute diagnostic</span>
     <h1>How healthy is your business — really?</h1>
-    <p>Answer 17 practical questions based on what happens in your business most of the time. You’ll receive an overall Business Health Score, six category scores, your top gaps, and alerts where a deeper conversation may help.</p>
+    <p>Answer 15 practical questions based on what happens in your business most of the time. You’ll immediately receive your overall Business Health Score, six category scores, and the gaps that deserve attention first.</p>
     <div class="intro-list">
       <div class="pill">Founder Dependency</div><div class="pill">People & Accountability</div><div class="pill">Process & Operations</div><div class="pill">Sales & Growth</div><div class="pill">Numbers & Visibility</div><div class="pill">Execution & Improvement</div>
     </div>
-    <p class="note">This is a directional diagnostic, not a financial, legal or professional audit.</p>
-    <button class="btn primary" onclick="startAssessment()">Check Your Business Health →</button>
+    <div class="start-trust" aria-label="Assessment details"><span>15 practical questions</span><span>About 3 minutes</span><span>Instant personalised result</span></div>
+    <button class="btn primary" onclick="startAssessment()">Start My 3-Minute Assessment →</button>
+    <p class="start-note">No email required to begin. This is a research-informed business diagnostic, not an audit or certification.</p>
   </section>
 
   <section id="assessment" class="panel" style="display:none">
-    <div class="meta"><span id="qCounter">Question 1 of 17</span><span id="categoryLabel"></span></div>
+    <div class="meta"><span id="qCounter">Question 1 of 15</span><span id="categoryLabel"></span></div>
     <div class="progress"><div id="progressBar" class="bar"></div></div>
     <div id="questions"></div>
     <div class="nav"><button id="prevBtn" class="btn secondary" onclick="prevQuestion()">← Back</button><button id="nextBtn" class="btn primary" onclick="nextQuestion()" disabled>Next →</button></div>
@@ -77,19 +79,17 @@ const questions=[
 {id:2,cat:'Founder Dependency',positive:true,text:'When I am unavailable for a day or two, the business continues to operate smoothly.'},
 {id:3,cat:'Founder Dependency',positive:false,text:'Customers, employees, or managers frequently come directly to me to solve problems that someone else should be able to handle.',alert:'Founder Bottleneck Alert'},
 {id:4,cat:'People & Accountability',positive:true,text:'Every key employee clearly understands what they are responsible for and what results are expected from them.'},
-{id:5,cat:'People & Accountability',positive:true,text:'Tasks and projects have a clear owner who is accountable for completing them.'},
-{id:6,cat:'People & Accountability',positive:false,text:'I regularly need to remind or follow up with employees to make sure important work gets completed.',alert:'Accountability Alert'},
-{id:7,cat:'Process & Operations',positive:true,text:'Important recurring activities in the business follow a clear and repeatable process.'},
-{id:8,cat:'Process & Operations',positive:true,text:'My team can easily find the information, documents, or instructions they need to complete their work.'},
-{id:9,cat:'Process & Operations',positive:false,text:'The same operational mistakes or problems keep happening repeatedly.',alert:'Recurring Process Failure Alert'},
-{id:10,cat:'Sales & Customer Growth',positive:true,text:'We have a consistent process for following up with leads and potential customers.'},
-{id:11,cat:'Sales & Customer Growth',positive:true,text:'I can clearly see where our leads come from and how many eventually become customers.'},
-{id:12,cat:'Sales & Customer Growth',positive:false,text:'Our sales performance depends heavily on one person, including me.',alert:'Sales Dependency Alert'},
-{id:13,cat:'Numbers & Business Visibility',positive:true,text:'I regularly review a small set of business numbers that tell me whether the company is performing well.'},
-{id:14,cat:'Numbers & Business Visibility',positive:true,text:'I have clear visibility into sales, expenses, cash flow, and profitability without having to search for the information.'},
-{id:15,cat:'Execution & Improvement',positive:true,text:'When we identify a recurring business problem, we assign ownership, make a change, and check whether the change actually worked.'},
-{id:16,cat:'Execution & Improvement',positive:true,text:'When we start an improvement initiative, one person is clearly responsible for completing it.'},
-{id:17,cat:'Execution & Improvement',positive:true,text:'We review whether important changes actually improved the business rather than simply moving on to the next issue.'}
+{id:5,cat:'People & Accountability',positive:false,text:'I regularly need to remind or follow up with employees to make sure important work gets completed.',alert:'Accountability Alert'},
+{id:6,cat:'Process & Operations',positive:true,text:'Important recurring activities in the business follow a clear and repeatable process.'},
+{id:7,cat:'Process & Operations',positive:false,text:'The same operational mistakes or problems keep happening repeatedly.',alert:'Recurring Process Failure Alert'},
+{id:8,cat:'Sales & Customer Growth',positive:true,text:'We have a consistent process for following up with leads and potential customers.'},
+{id:9,cat:'Sales & Customer Growth',positive:true,text:'I can clearly see where our leads come from and how many eventually become customers.'},
+{id:10,cat:'Sales & Customer Growth',positive:false,text:'Our sales performance depends heavily on one person, including me.',alert:'Sales Dependency Alert'},
+{id:11,cat:'Numbers & Business Visibility',positive:true,text:'I regularly review a small set of business numbers that tell me whether the company is performing well.'},
+{id:12,cat:'Numbers & Business Visibility',positive:true,text:'I have clear visibility into sales, expenses, cash flow, and profitability without having to search for the information.'},
+{id:13,cat:'Execution & Improvement',positive:true,text:'When we identify a recurring business problem, we assign ownership, make a change, and check whether the change actually worked.'},
+{id:14,cat:'Execution & Improvement',positive:true,text:'When we start an improvement initiative, one person is clearly responsible for completing it.'},
+{id:15,cat:'Execution & Improvement',positive:true,text:'We review whether important changes actually improved the business rather than simply moving on to the next issue.'}
 ];
 const categoryInfo={
 'Founder Dependency':'How much everyday decision-making and problem-solving still depends on the founder.',
