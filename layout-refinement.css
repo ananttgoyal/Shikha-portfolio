@@ -28,4 +28,4 @@
 @media(max-width:1180px) and (min-width:901px){.brand-lockup{width:250px!important}.brand-tagline{font-size:.49rem!important;letter-spacing:.07em!important}.hero-title-line{white-space:normal}}
 @media(max-width:700px){.brand-tagline{display:none!important}.hero-title-line{display:block!important;white-space:normal}.home-page .hero h1{font-size:clamp(2.15rem,10vw,2.7rem)!important}}
 .brand-tagline{display:none!important}
-.home-page .brand-lockup,.insights-page .brand-lockup{min-height:109px;background:url('images/shikha-solutions-approved-logo.jpeg') center/contain no-repeat}.home-page .brand-logo,.insights-page .brand-logo{visibility:hidden}.home-page .hero h1{font-size:clamp(2.55rem,3vw,3rem)!important}
+.home-page .brand-lockup,.insights-page .brand-lockup{min-height:109px;background:url('images/shikha-solutions-logo-transparent.png') center/contain no-repeat}.home-page .brand-logo,.insights-page .brand-logo{visibility:hidden}.home-page .hero h1{font-size:clamp(2.55rem,3vw,3rem)!important}
