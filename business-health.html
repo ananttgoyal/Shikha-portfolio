@@ -16,6 +16,7 @@
 <style>
 body{background:#F7F3EC;color:#20252C}.back{color:#061A33}.eyebrow{background:rgba(201,138,22,.12);color:#C98A16}.panel,.pill,.metric{border-color:#e4d9c9}.progress,.meter{background:#efe7da}.bar,.meter span{background:#C98A16}.category{color:#C98A16}.option:hover,.option.selected{border-color:#C98A16;background:#fff8e8}.primary{background:#061A33;color:#fff}.primary:hover{background:#0b294e}.secondary{background:#efe7da;color:#061A33}.start-trust span{border-color:#e4d9c9;color:#061A33}.score-ring{background:conic-gradient(#C98A16 var(--score),#efe7da 0)}.score-label,.meta,.note{color:#65707b}.booking{color:#061A33!important;border-color:#C98A16!important}.cta{background:#061A33;border-top:5px solid #C98A16}.cta p{color:#d7dde4}
 </style>
+<style>.result-capture{display:none}.result-capture h2{font-family:Fraunces,serif;color:#061A33;margin:0 0 8px}.capture-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:22px}.capture-field{display:grid;gap:6px}.capture-field.full{grid-column:1/-1}.capture-field label{font-size:.82rem;font-weight:700;color:#061A33}.capture-field input,.capture-field select{width:100%;min-height:48px;border:1px solid #d9d2c5;border-radius:10px;background:#fff;font:inherit;padding:10px 12px}.capture-field input:focus,.capture-field select:focus{outline:3px solid rgba(201,138,22,.18);border-color:#C98A16}.capture-consent{display:flex;align-items:flex-start;gap:9px;margin:17px 0;color:#65707b;font-size:.78rem}.capture-consent input{margin-top:4px;accent-color:#C98A16}.capture-status{display:none;padding:12px 14px;border-radius:9px;margin:0 0 16px;font-size:.85rem}.capture-status.error{display:block;background:#fff1f0;border:1px solid #d69b95;color:#7a2018}.capture-status.success{display:block;background:#fff8e8;border:1px solid #C98A16;color:#061A33}@media(max-width:700px){.capture-grid{grid-template-columns:1fr}.capture-field.full{grid-column:auto}.result-capture .btn{width:100%}}</style>
 </head>
 <body>
 <div class="wrap">
@@ -38,6 +39,26 @@ body{background:#F7F3EC;color:#20252C}.back{color:#061A33}.eyebrow{background:rg
     <div class="progress"><div id="progressBar" class="bar"></div></div>
     <div id="questions"></div>
     <div class="nav"><button id="prevBtn" class="btn secondary" onclick="prevQuestion()">← Back</button><button id="nextBtn" class="btn primary" onclick="nextQuestion()" disabled>Next →</button></div>
+  </section>
+
+  <section id="resultCapture" class="panel result-capture">
+    <span class="eyebrow">Your assessment is complete</span>
+    <h2>Where should we send your personalised Business Health result?</h2>
+    <p>Your score, six category results, top three gaps and any important alerts will appear immediately after submission and will also be emailed to you.</p>
+    <div id="captureStatus" class="capture-status" role="status"></div>
+    <form id="assessmentLeadForm">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none">
+      <div class="capture-grid">
+        <div class="capture-field"><label for="assessmentName">Your name</label><input id="assessmentName" name="name" type="text" autocomplete="name" required></div>
+        <div class="capture-field"><label for="assessmentEmail">Work email</label><input id="assessmentEmail" name="email" type="email" autocomplete="email" required></div>
+        <div class="capture-field"><label for="assessmentPhone">Phone / WhatsApp number</label><input id="assessmentPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        <div class="capture-field"><label for="assessmentCompany">Company name</label><input id="assessmentCompany" name="company" type="text" autocomplete="organization" required></div>
+        <div class="capture-field full"><label for="assessmentStage">Business stage</label><select id="assessmentStage" name="stage" required><option value="" selected disabled>Select one</option><option>Founder with a team of 1–9</option><option>Growing team of 10–25</option><option>Established team of 26–50</option><option>Team of 51+</option><option>Exploring or not sure</option></select></div>
+      </div>
+      <label class="capture-consent"><input type="checkbox" name="consent" value="true" required><span>I agree to receive my personalised assessment result and one relevant follow-up from Shikha Solutions. My details will not be shared.</span></label>
+      <button id="emailResultBtn" type="submit" class="btn primary">Show and Email My Result →</button>
+      <p class="note">Your answers are used only to calculate and deliver this business diagnostic.</p>
+    </form>
   </section>
 
   <section id="results" class="results">
@@ -108,7 +129,7 @@ const alertCopy={
 'Recurring Process Failure Alert':'Your answers suggest the same operational problems may be repeating. This usually points to a process, ownership, training, or feedback-loop gap.',
 'Sales Dependency Alert':'Your answers suggest sales performance may depend too heavily on one person. That can make growth less predictable and harder to scale.'
 };
-let current=0; const responses={};
+let current=0; const responses={}; let pendingResult=null;
 function startAssessment(){document.getElementById('intro').style.display='none';document.getElementById('assessment').style.display='block';renderQuestions();showQuestion(0);window.scrollTo({top:0,behavior:'smooth'});}
 function renderQuestions(){const root=document.getElementById('questions');root.innerHTML='';questions.forEach((q,i)=>{const d=document.createElement('div');d.className='question';d.id='q'+i;d.innerHTML=`<div class="category">${q.cat}</div><h2>${q.text}</h2><div class="options">${answersLabels.map((a,idx)=>`<button class="option" data-v="${idx}" onclick="selectAnswer(${i},${idx},this)">${a}</button>`).join('')}</div>`;root.appendChild(d);});}
 function selectAnswer(i,idx,el){responses[i]=idx;document.querySelectorAll('#q'+i+' .option').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');document.getElementById('nextBtn').disabled=false;}
@@ -119,9 +140,27 @@ function rawScore(q,idx){const base=5-idx;return q.positive?base:6-base;}
 function normalized(total,count){return Math.round(((total-count)/(count*4))*100);}
 function status(score){if(score>=80)return 'Strong';if(score>=60)return 'Needs Optimization';if(score>=40)return 'Growth Constraint';return 'Priority Risk';}
 function overallDescriptor(score){if(score>=80)return ['Strong Business Foundation','Your business shows a relatively strong foundation. The opportunity is to strengthen weak spots and prepare the systems that will support the next stage of growth.'];if(score>=60)return ['Growth Friction','Your business is functioning, but some gaps may be creating unnecessary delays, founder involvement, or lost opportunities.'];if(score>=40)return ['Founder-Dependent Business','Several parts of the business may still depend too heavily on the founder, individual employees, or informal ways of working.'];return ['Business Foundation Needs Attention','Important systems, accountability, visibility, or execution mechanisms appear inconsistent and should be prioritised before adding more complexity.'];}
-function calculateResults(){let total=0;const catTotals={},catCounts={};questions.forEach((q,i)=>{const s=rawScore(q,responses[i]);total+=s;catTotals[q.cat]=(catTotals[q.cat]||0)+s;catCounts[q.cat]=(catCounts[q.cat]||0)+1;});const overall=Math.round(((total-questions.length)/(questions.length*4))*100);const cats=Object.keys(catTotals).map(cat=>({cat,score:normalized(catTotals[cat],catCounts[cat])})).sort((a,b)=>a.score-b.score);renderResults(overall,cats);}
+function calculateResults(){let total=0;const catTotals={},catCounts={};questions.forEach((q,i)=>{const s=rawScore(q,responses[i]);total+=s;catTotals[q.cat]=(catTotals[q.cat]||0)+s;catCounts[q.cat]=(catCounts[q.cat]||0)+1;});const overall=Math.round(((total-questions.length)/(questions.length*4))*100);const cats=Object.keys(catTotals).map(cat=>({cat,score:normalized(catTotals[cat],catCounts[cat])})).sort((a,b)=>a.score-b.score);const alerts=[];questions.forEach((q,i)=>{if(q.alert&&responses[i]<=1)alerts.push(q.alert)});pendingResult={overall,cats,alerts};document.getElementById('assessment').style.display='none';document.getElementById('resultCapture').style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
 function whatsappUrl(overall,topGap,alertName=''){const message=`Hi, I completed the Shikha Solutions Business Health Assessment. My score is ${overall}/100 and my biggest gap is ${topGap}.${alertName?` I also received a ${alertName}.`:''} I’d like to understand what I should fix first.`;return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;}
 function renderResults(overall,cats){document.getElementById('assessment').style.display='none';document.getElementById('results').style.display='block';document.getElementById('overallScore').textContent=overall;document.getElementById('scoreRing').style.setProperty('--score',overall+'%');const [title,text]=overallDescriptor(overall);document.getElementById('overallTitle').textContent=title;document.getElementById('overallText').textContent=text;document.getElementById('metrics').innerHTML=cats.map(x=>`<div class="metric"><div class="metric-head"><span>${x.cat}</span><span>${x.score}/100</span></div><div class="meter"><span style="width:${x.score}%"></span></div><div class="status">${status(x.score)}</div></div>`).join('');document.getElementById('gaps').innerHTML=cats.slice(0,3).map((x,i)=>`<div class="metric" style="margin:10px 0"><div class="metric-head"><span>#${i+1} ${x.cat}</span><span>${x.score}/100</span></div><p style="color:#5a5a5a;margin:8px 0 0">${categoryInfo[x.cat]}</p></div>`).join('');const topGap=cats[0].cat;document.getElementById('finalWhatsApp').href=whatsappUrl(overall,topGap);const alerts=[];questions.forEach((q,i)=>{if(q.alert && responses[i]<=1)alerts.push(q.alert);});if(alerts.length){document.getElementById('alertsPanel').style.display='block';document.getElementById('alerts').innerHTML=alerts.map(a=>`<div class="alert"><h3>${a}</h3><p>${alertCopy[a]}</p><div class="alert-actions"><a href="${whatsappUrl(overall,topGap,a)}" target="_blank" rel="noopener" class="btn whatsapp">Message on WhatsApp →</a><a href="${BOOKING_URL}" target="_blank" rel="noopener" class="btn booking">Book a Business Health Call →</a></div></div>`).join('');}window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+<script>
+document.getElementById('assessmentLeadForm').addEventListener('submit',async function(event){
+  event.preventDefault();
+  if(!pendingResult)return;
+  const form=event.currentTarget,button=document.getElementById('emailResultBtn'),statusBox=document.getElementById('captureStatus');
+  button.disabled=true;button.textContent='Preparing Your Result…';statusBox.className='capture-status';statusBox.textContent='';
+  const data=Object.fromEntries(new FormData(form).entries());
+  const payload={...data,consent:data.consent==='true',overall:pendingResult.overall,categories:pendingResult.cats,topGaps:pendingResult.cats.slice(0,3),alerts:pendingResult.alerts};
+  try{
+    const response=await fetch('/api/assessment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok)throw new Error(result.error||'Unable to email your result right now.');
+    statusBox.className='capture-status success';statusBox.textContent='Your personalised result has been emailed. Your on-screen result is ready below.';
+    document.getElementById('resultCapture').style.display='none';
+    renderResults(pendingResult.overall,pendingResult.cats);
+  }catch(error){statusBox.className='capture-status error';statusBox.textContent=error.message;button.disabled=false;button.textContent='Show and Email My Result →';}
+});
 </script>
 </body>
 </html>
