@@ -1,4 +1,4 @@
-const FROM = 'Aanant Goyal | Shikha Solutions <hello@shikhasolutions.com>';
+const FROM = 'Aanant Goyal | Shikha Solutions <anant@shikhasolutions.com>';
 const OWNER = 'shikhasolutionsin@gmail.com';
 const ALLOWED_ORIGIN = 'https://www.shikhasolutions.com';
 const ALLOWED_CATEGORIES = new Set(['Founder Dependency','People & Accountability','Process & Operations','Sales & Customer Growth','Numbers & Business Visibility','Execution & Improvement']);
