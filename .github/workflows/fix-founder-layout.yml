@@ -1,0 +1,52 @@
+name: Fix founder layout
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-founder-layout.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply founder layout fix
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('home-base.css')
+          css = path.read_text()
+          marker = '/* founder-layout-fix-v2 */'
+          if marker in css:
+              css = css.split(marker)[0].rstrip() + '\n'
+          css += r'''
+/* founder-layout-fix-v2 */
+@media(min-width:981px){
+  #founder .founder{display:grid;grid-template-columns:minmax(320px,390px) minmax(0,1fr);grid-template-rows:auto auto;column-gap:46px;row-gap:16px;align-items:start}
+  #founder .founder-left{display:contents}
+  #founder .founder-action-grid{display:contents}
+  #founder .founder-video-frame{grid-column:1;grid-row:1}
+  #founder .founder-copy{grid-column:2;grid-row:1}
+  #founder .founder-action-grid .btn{grid-column:1;grid-row:2;width:100%;min-height:72px;height:auto;border-radius:10px;padding:16px 20px}
+  #founder .founder-promise-profile{grid-column:2;grid-row:2;margin:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;padding:18px 22px}
+  #founder .founder-promise-profile p{max-width:720px}
+}
+@media(max-width:980px){
+  #founder .founder-left{display:block}
+  #founder .founder-action-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+  #founder .founder-action-grid .btn{min-height:58px}
+  #founder .founder-promise-profile{margin:0}
+}
+'''
+          path.write_text(css)
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name 'Shikha Site Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add home-base.css
+          git commit -m 'Align founder CTA and promise across columns' || exit 0
+          git push
