@@ -29,3 +29,12 @@
 @media(max-width:700px){.brand-tagline{display:none!important}.hero-title-line{display:block!important;white-space:normal}.home-page .hero h1{font-size:clamp(2.15rem,10vw,2.7rem)!important}}
 .brand-tagline{display:none!important}
 .home-page .brand-lockup,.insights-page .brand-lockup{min-height:109px;background:none}.home-page .brand-logo,.insights-page .brand-logo{visibility:visible!important;content:url('images/shikha-solutions-logo-transparent.webp');width:100%;height:auto}.home-page .hero h1{font-size:clamp(2.55rem,3vw,3rem)!important}
+
+/* Homepage workflow cleanup */
+@media(min-width:1101px){
+  .home-page #what-we-do .section-head{max-width:none!important}
+  .home-page #what-we-do .section-head h2{font-size:clamp(2rem,2.5vw,2.55rem)!important}
+  .home-page #what-we-do .section-head h2 .heading-line{white-space:nowrap!important}
+}
+/* The assessment is already introduced in the hero, journey and path selector; remove the duplicate full-width teaser block. */
+.home-page section.section:has(> .container.assessment){display:none!important}
