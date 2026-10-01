@@ -9,3 +9,5 @@
 
 /* Four owner testimonials */
 .testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.testimonial-initials{display:grid;place-items:center;flex:0 0 78px;width:78px;height:78px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.6rem}.testimonial-card blockquote{min-height:155px}@media(max-width:980px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card blockquote{min-height:0}}
+
+@media(min-width:981px){.testimonial-grid>.testimonial-card:last-child:nth-child(odd){grid-column:1/-1}.testimonial-grid>.testimonial-card:last-child:nth-child(odd) blockquote{min-height:0;max-width:950px}}
