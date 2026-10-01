@@ -10,4 +10,24 @@
 /* Four owner testimonials */
 .testimonial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.testimonial-initials{display:grid;place-items:center;flex:0 0 78px;width:78px;height:78px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.6rem}.testimonial-card blockquote{min-height:155px}@media(max-width:980px){.testimonial-grid{grid-template-columns:1fr}.testimonial-card blockquote{min-height:0}}
 
-@media(min-width:981px){.testimonial-grid>.testimonial-card:last-child:nth-child(odd){grid-column:1/-1}.testimonial-grid>.testimonial-card:last-child:nth-child(odd) blockquote{min-height:0;max-width:950px}}
+
+/* Compact, horizontally browsable client stories */
+#testimonials{padding:48px 0}
+#testimonials .section-head{margin-bottom:20px}
+.testimonial-browse{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px;color:#5d6873;font-size:.8rem}
+.testimonial-arrows{display:flex;gap:8px}
+.testimonial-arrows button{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:var(--ivory);color:var(--navy);font-size:1.2rem;cursor:pointer}
+.testimonial-arrows button:hover:not(:disabled){background:var(--navy);color:#fff}
+.testimonial-arrows button:disabled{opacity:.35;cursor:default}
+.testimonial-arrows button:focus-visible,.testimonial-grid:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+#testimonials .testimonial-grid{display:flex;gap:18px;overflow-x:auto;align-items:flex-start;scroll-snap-type:x mandatory;scroll-padding-inline:2px;padding:3px 2px 14px;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--gold) var(--ivory)}
+#testimonials .testimonial-card{flex:0 0 340px;max-width:calc(100% - 24px);padding:20px;scroll-snap-align:start}
+#testimonials .testimonial-brand{min-height:60px;gap:12px}
+#testimonials .testimonial-brand img{flex-basis:60px;width:60px;height:60px}
+#testimonials .testimonial-initials{flex-basis:60px;width:60px;height:60px;font-size:1.3rem}
+#testimonials .testimonial-brand h3{font-size:1.15rem}
+#testimonials .testimonial-scope{min-height:34px;margin:12px 0 8px;line-height:1.5}
+#testimonials .testimonial-card blockquote{font-size:1rem;line-height:1.6;min-height:180px}
+#testimonials .testimonial-author{margin:14px 0 8px;padding-top:12px}
+#testimonials .testimonial-next{margin-top:18px;padding-top:18px}
+@media(max-width:700px){#testimonials{padding:32px 0}#testimonials .testimonial-card{flex-basis:300px}#testimonials .testimonial-card blockquote{min-height:0}.testimonial-browse{font-size:.75rem}}
