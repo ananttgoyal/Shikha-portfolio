@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/monthly-growth-retainer",
+      "destination": "/90-day-growth-execution-partnership",
+      "permanent": true
+    },
+    {
+      "source": "/monthly-growth-retainer/",
+      "destination": "/90-day-growth-execution-partnership",
+      "permanent": true
+    },
+    {
+      "source": "/monthly-growth-retainer/index.html",
+      "destination": "/90-day-growth-execution-partnership",
+      "permanent": true
+    }
+  ]
+}

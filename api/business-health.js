@@ -1,3 +1,4 @@
+const {normalizePhone,parseBody,campaignText,campaignHtml}=require('../lib/lead-utils');
 const FROM = 'Aanant Goyal | Shikha Solutions <hello@shikhasolutions.com>';
 const OWNER = 'shikhasolutionsin@gmail.com';
 const ALLOWED_ORIGINS = new Set(['https://www.shikhasolutions.com', 'https://shikhasolutions.com']);
@@ -103,16 +104,16 @@ module.exports = async function handler(req, res) {
 
   let body;
   try {
-    body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+    body = parseBody(req);
   } catch {
     return res.status(400).json({ ok: false, error: 'Invalid request.' });
   }
 
-  if (clean(body.website)) return res.status(200).json({ ok: true });
+  if (clean(body.website)) return res.status(200).json({ ok: true, leadAccepted:false });
 
   const name = clean(body.name, 100);
   const email = clean(body.email, 180).toLowerCase();
-  const phone = clean(body.phone, 40);
+  const phone = normalizePhone(body.phone);
   const businessName = clean(body.businessName, 160);
   const industry = clean(body.industry, 160);
   const consent = body.consent === true || body.consent === 'true';
@@ -151,12 +152,12 @@ module.exports = async function handler(req, res) {
       to: [OWNER],
       reply_to: email,
       subject: `New Business Health Lead — ${businessName} — ${overall}/100`,
-      html: `<!doctype html><html><body style="margin:0;background:#F7F3EC;font-family:Arial,Helvetica,sans-serif;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:24px;"><table width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;border-top:5px solid #C98A16;"><tr><td bgcolor="#061A33" style="padding:26px 30px;"><p style="margin:0 0 6px;color:#E2AA43;font-size:12px;font-weight:bold;">NEW BUSINESS HEALTH LEAD</p><h1 style="margin:0;color:#FFFFFF;font-family:Georgia,serif;font-size:25px;">${safeBusiness} — ${overall}/100</h1></td></tr><tr><td style="padding:28px 30px;color:#20252C;font-size:14px;line-height:1.6;"><p><strong>Name:</strong> ${safeName}</p><p><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p><p><strong>Phone / WhatsApp:</strong> ${safePhone}</p><p><strong>Business:</strong> ${safeBusiness}</p><p><strong>Industry:</strong> ${safeIndustry}</p><p><strong>Overall score:</strong> ${overall}/100 — ${safeTitle}</p><h2 style="color:#061A33;font-family:Georgia,serif;font-size:19px;margin-top:24px;">Section scores</h2>${categories.map(c => `<p><strong>${escapeHtml(c.cat)}:</strong> ${c.score}/100</p>`).join('')}<p><strong>First priority:</strong> ${escapeHtml(categories[0].cat)} (${categories[0].score}/100)</p><p><strong>Alerts:</strong> ${escapeHtml(alertText, 700)}</p><p style="margin-top:24px;"><a href="mailto:${safeEmail}" style="display:inline-block;background:#061A33;color:#FFFFFF;text-decoration:none;font-weight:bold;padding:12px 18px;border-radius:5px;">Reply to this lead →</a></p></td></tr></table></td></tr></table></body></html>`,
-      text: `New Business Health Lead\n\nName: ${name}\nEmail: ${email}\nPhone / WhatsApp: ${phone}\nBusiness: ${businessName}\nIndustry: ${industry}\nOverall score: ${overall}/100 — ${title}\n\n${categoryText}\n\nFirst priority: ${categories[0].cat} (${categories[0].score}/100)\nAlerts: ${alertText}`,
+      html: `<!doctype html><html><body style="margin:0;background:#F7F3EC;font-family:Arial,Helvetica,sans-serif;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:24px;"><table width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:640px;border-top:5px solid #C98A16;"><tr><td bgcolor="#061A33" style="padding:26px 30px;"><p style="margin:0 0 6px;color:#E2AA43;font-size:12px;font-weight:bold;">NEW BUSINESS HEALTH LEAD</p><h1 style="margin:0;color:#FFFFFF;font-family:Georgia,serif;font-size:25px;">${safeBusiness} — ${overall}/100</h1></td></tr><tr><td style="padding:28px 30px;color:#20252C;font-size:14px;line-height:1.6;"><p><strong>Name:</strong> ${safeName}</p><p><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p><p><strong>Phone / WhatsApp:</strong> ${safePhone}</p><p><strong>Business:</strong> ${safeBusiness}</p><p><strong>Industry:</strong> ${safeIndustry}</p><p><strong>Overall score:</strong> ${overall}/100 — ${safeTitle}</p><h2 style="color:#061A33;font-family:Georgia,serif;font-size:19px;margin-top:24px;">Section scores</h2>${categories.map(c => `<p><strong>${escapeHtml(c.cat)}:</strong> ${c.score}/100</p>`).join('')}<p><strong>First priority:</strong> ${escapeHtml(categories[0].cat)} (${categories[0].score}/100)</p><p><strong>Alerts:</strong> ${escapeHtml(alertText, 700)}</p>${campaignHtml(body)}<p style="margin-top:24px;"><a href="mailto:${safeEmail}" style="display:inline-block;background:#061A33;color:#FFFFFF;text-decoration:none;font-weight:bold;padding:12px 18px;border-radius:5px;">Reply to this lead →</a></p></td></tr></table></td></tr></table></body></html>`,
+      text: `New Business Health Lead\n\nName: ${name}\nEmail: ${email}\nPhone / WhatsApp: ${phone}\nBusiness: ${businessName}\nIndustry: ${industry}\nOverall score: ${overall}/100 — ${title}\n\n${categoryText}\n\nFirst priority: ${categories[0].cat} (${categories[0].score}/100)\nAlerts: ${alertText}${campaignText(body)}`,
       tags: [{ name: 'source', value: 'business-health-owner' }]
     });
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, leadAccepted:true });
   } catch (error) {
     console.error('Business health email error', error);
     return res.status(502).json({ ok: false, error: 'Unable to email your report right now. Please try again.' });

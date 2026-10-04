@@ -1,3 +1,4 @@
+const {normalizePhone,parseBody,campaignText,campaignHtml}=require('../lib/lead-utils');
 const TEMPLATE_ID = 'e72758b5-0a62-4572-af24-ccfd79b75e13';
 const FROM = 'Aanant Goyal | Shikha Solutions <hello@shikhasolutions.com>';
 const OWNER = 'shikhasolutionsin@gmail.com';
@@ -56,19 +57,19 @@ module.exports = async function handler(req, res) {
     return res.status(503).json({ ok: false, code: 'setup_incomplete' });
   }
 
-  const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+  let body; try { body = parseBody(req); } catch { return res.status(400).json({ok:false,error:'Invalid request.'}); }
   if (clean(body.website)) {
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, leadAccepted:false });
   }
 
   const name = clean(body.name, 100);
   const email = clean(body.email, 180).toLowerCase();
-  const phone = clean(body.phone, 40);
+  const phone = normalizePhone(body.phone);
   const stage = clean(body.stage, 120);
   const challenge = clean(body.challenge, 160);
   const consent = body.consent === true || body.consent === 'true';
 
-  if (!name || !validEmail(email) || !stage || !challenge || !consent) {
+  if (!name || !validEmail(email) || !stage || !challenge || !consent || (body.phone && !phone)) {
     return res.status(400).json({ ok: false, error: 'Please complete all required fields.' });
   }
 
@@ -98,12 +99,12 @@ module.exports = async function handler(req, res) {
       to: [OWNER],
       reply_to: email,
       subject: `New checklist lead: ${name}`,
-      html: `<!DOCTYPE html><html><body style="margin:0;background:#F7F3EC;font-family:Arial,Helvetica,sans-serif;"><table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F3EC"><tr><td align="center" style="padding:24px;"><table width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:600px;border-top:5px solid #C98A16;"><tr><td bgcolor="#061A33" style="padding:26px 30px;background:#061A33;"><p style="margin:0 0 6px;color:#E2AA43;font-size:12px;font-weight:bold;">NEW WEBSITE LEAD</p><h1 style="margin:0;color:#FFFFFF;font-family:Georgia,serif;font-size:26px;">Business Health Checklist request</h1></td></tr><tr><td style="padding:28px 30px;color:#20252C;font-size:14px;line-height:1.6;"><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> <a href="mailto:${safe.email}">${safe.email}</a></p><p><strong>WhatsApp:</strong> ${safe.phone}</p><p><strong>Business stage:</strong> ${safe.stage}</p><p><strong>Biggest growth challenge:</strong> ${safe.challenge}</p><p style="margin-top:24px;"><a href="mailto:${safe.email}" style="display:inline-block;background:#061A33;color:#FFFFFF;text-decoration:none;font-weight:bold;padding:12px 18px;border-radius:5px;">Reply to this lead →</a></p></td></tr></table></td></tr></table></body></html>`,
-      text: `New Business Health Checklist request\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${phone || 'Not provided'}\nBusiness stage: ${stage}\nBiggest growth challenge: ${challenge}`,
+      html: `<!DOCTYPE html><html><body style="margin:0;background:#F7F3EC;font-family:Arial,Helvetica,sans-serif;"><table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F3EC"><tr><td align="center" style="padding:24px;"><table width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;max-width:600px;border-top:5px solid #C98A16;"><tr><td bgcolor="#061A33" style="padding:26px 30px;background:#061A33;"><p style="margin:0 0 6px;color:#E2AA43;font-size:12px;font-weight:bold;">NEW WEBSITE LEAD</p><h1 style="margin:0;color:#FFFFFF;font-family:Georgia,serif;font-size:26px;">Business Health Checklist request</h1></td></tr><tr><td style="padding:28px 30px;color:#20252C;font-size:14px;line-height:1.6;"><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> <a href="mailto:${safe.email}">${safe.email}</a></p><p><strong>WhatsApp:</strong> ${safe.phone}</p><p><strong>Business stage:</strong> ${safe.stage}</p><p><strong>Biggest growth challenge:</strong> ${safe.challenge}</p>${campaignHtml(body)}<p style="margin-top:24px;"><a href="mailto:${safe.email}" style="display:inline-block;background:#061A33;color:#FFFFFF;text-decoration:none;font-weight:bold;padding:12px 18px;border-radius:5px;">Reply to this lead →</a></p></td></tr></table></td></tr></table></body></html>`,
+      text: `New Business Health Checklist request\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${phone || 'Not provided'}\nBusiness stage: ${stage}\nBiggest growth challenge: ${challenge}${campaignText(body)}`,
       tags: [{ name: 'source', value: 'website-checklist-owner' }]
     });
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, leadAccepted:true });
   } catch (error) {
     console.error('Checklist email error', error);
     return res.status(502).json({ ok: false, error: 'Unable to send email right now.' });
