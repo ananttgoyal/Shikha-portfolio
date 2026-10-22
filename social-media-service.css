@@ -79,3 +79,7 @@
 .event-strip video{object-fit:contain}
 .event-strip a:focus-visible,.event-strip:focus-visible{outline:3px solid #bd923a;outline-offset:3px}
 .event-strip figcaption{padding:14px 16px;font-size:.82rem;line-height:1.6;color:#28384c}
+
+.social-page #client-work,.social-page #anita-dandiya{scroll-margin-top:115px}
+.social-page .brand-work-card .work-link+.work-link{margin-top:0}
+@media(max-width:600px){.event-strip figure{flex-basis:280px;max-width:82vw}.event-strip img,.event-strip video{height:210px}.social-page #client-work,.social-page #anita-dandiya{scroll-margin-top:90px}}
