@@ -62,3 +62,16 @@
 .crm-flow summary:focus-visible{outline:2px solid #e3b851;outline-offset:5px}
 @media(max-width:900px){.platform-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.crm-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.platform-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-panel{padding:22px 18px}.crm-flow{grid-template-columns:1fr}.crm-systems{scroll-margin-top:90px}}
+
+.platform-intro{padding-top:38px;padding-bottom:38px;scroll-margin-top:115px;border-bottom:1px solid #e2d9ca}
+.platform-intro h2{font-size:clamp(1.65rem,3vw,2.4rem)}
+.platform-grid .platform-card{display:flex;flex-direction:column;align-items:flex-start;padding:20px 16px;border:1px solid #e2d9ca;border-radius:14px;background:#fff;color:#091b33;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.platform-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px #091b3312}
+.platform-card:focus-visible{outline:3px solid #bb8e2e;outline-offset:3px}
+.platform-card img{width:100%;height:54px;object-fit:contain;object-position:left center;margin-bottom:18px}
+.platform-card img[src*="leadsquared"]{width:54px}
+.platform-grid .platform-card strong{font-size:1rem}
+.platform-card small{display:block;margin-top:auto;padding-top:14px;color:#78570e;font-weight:600;font-size:.73rem}
+.growth-wordmark{height:54px;margin-bottom:18px;display:flex;flex-direction:column;justify-content:center;font-family:Arial,sans-serif;font-size:18px;font-weight:700;letter-spacing:.14em;line-height:1}
+.growth-wordmark b:first-child{color:#1abc9c}.growth-wordmark b:last-child{color:#0f172a}
+@media(max-width:600px){.platform-intro{scroll-margin-top:90px}.platform-card img{height:44px}.growth-wordmark{height:44px;font-size:16px}}
