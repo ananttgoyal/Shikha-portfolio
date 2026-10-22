@@ -1,6 +1,8 @@
 /* Compact mobile rows for the five homepage groups. Desktop layout is retained. */
 .mobile-flow-controls{display:none}
 @media(max-width:700px){
+html:has(body.home-page){overflow-x:clip}
+body.home-page{max-width:100%;overflow-x:clip}
 .home-page .mobile-flow-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 12px;color:#6a501e;font-size:.73rem;font-weight:600}
 .home-page .mobile-flow-controls>div{display:flex;gap:7px}
 .home-page .mobile-flow-controls button{display:grid;place-items:center;width:40px;height:40px;border:1px solid #cdbb9b;border-radius:50%;background:#fff;color:#061a33;font:inherit;font-size:1.2rem;cursor:pointer}
