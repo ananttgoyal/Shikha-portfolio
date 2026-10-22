@@ -1,0 +1,38 @@
+/* Scoped, responsive illustrative enquiry register */
+.enquiry-demo{border:1px solid #dcd3c4;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 12px 35px #091b3309;color:#091b33}
+.enquiry-demo-top{display:flex;gap:24px;align-items:center;justify-content:space-between;background:#091b33;color:#fff;padding:26px}
+.enquiry-demo-top h3{color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:1.65rem;margin:10px 0}
+.enquiry-demo-top p{color:#d6dfe9;font-size:.78rem;line-height:1.7;margin:0;max-width:650px}
+.demo-label{font-size:.65rem;font-weight:700;letter-spacing:.08em;color:#e6bf68}
+.demo-download{flex:0 0 205px;border:1px solid #acbbca;border-radius:10px;padding:13px;color:#fff!important;font-size:.77rem;text-decoration:underline;text-underline-offset:3px;line-height:1.6}
+.demo-stages{display:flex;list-style:none;gap:8px;margin:0;padding:20px 26px;overflow-x:auto;border-bottom:1px solid #eee7dc}
+.demo-stages li{flex:0 0 auto;background:#f5f1e8;border-radius:7px;padding:7px 10px;font-size:.7rem;font-weight:600}
+.demo-stages li+li:before{content:'→';margin-right:9px;color:#8b651d}
+.demo-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:22px 26px}
+.demo-metrics>div{padding:15px;background:#f8f5ee;border:1px solid #e8e0d3;border-radius:10px}
+.demo-metrics strong{display:block;font-size:1.8rem;line-height:1.2}
+.demo-metrics span{display:block;font-size:.73rem;margin-top:7px;color:#526073}
+.demo-filters{display:flex;flex-wrap:wrap;gap:9px;padding:0 26px 12px}.demo-filters[hidden]{display:none}
+.demo-filters button{font:inherit;font-size:.76rem;padding:9px 13px;border:1px solid #9caabb;border-radius:20px;background:#fff;color:#091b33;cursor:pointer}
+.demo-filters button[aria-pressed=true]{background:#091b33;border-color:#091b33;color:#fff}
+.demo-help{margin:0;padding:0 26px 12px;font-size:.72rem;color:#596575}
+.demo-table-wrap{overflow-x:auto;margin:0 26px;border:1px solid #e2d9ca;border-radius:10px}
+.demo-table{border-collapse:collapse;width:100%;min-width:790px;text-align:left;font-size:.76rem}
+.demo-table caption{text-align:left;background:#f7f4ed;padding:11px 14px;font-size:.7rem;color:#526073;caption-side:top}
+.demo-table th,.demo-table td{padding:15px 14px;vertical-align:top;border-bottom:1px solid #eae4d9;line-height:1.65}
+.demo-table thead th{background:#f1ece2;font-size:.69rem;font-weight:700}
+.demo-table tbody th{width:18%;font-weight:600}.demo-table td:last-child{width:27%}
+.demo-table tr:last-child>*{border-bottom:0}.demo-table tr[hidden]{display:none}
+.demo-table th>span,.demo-table td>span:not(.demo-pill){display:block;font-size:.7rem;color:#596575;font-weight:400}
+.demo-pill{display:inline-block;white-space:nowrap;padding:3px 8px;border-radius:6px;background:#eef2f6;font-size:.69rem;color:#18344d}
+.demo-pill.demo-won{background:#e8f3ec;color:#24603a}
+.demo-table td>span.demo-attention{color:#79500d;font-weight:600}
+.demo-table td>span.demo-overdue{color:#9a382e;font-weight:600}
+.demo-table details{margin-top:5px}.demo-table summary{cursor:pointer;color:#344c69;text-decoration:underline;text-underline-offset:3px}
+.demo-table details p{margin:9px 0 0;font-size:.72rem;color:#526073;line-height:1.8}
+.demo-result{padding:12px 26px;margin:0;font-size:.73rem;color:#596575}
+.demo-takeaway{border-top:1px solid #eee5d7;background:#faf7f0;padding:19px 26px}
+.demo-takeaway strong{font-size:.91rem}.demo-takeaway p{font-size:.79rem;line-height:1.8;margin:6px 0 0;color:#526073}
+.demo-bottom{display:flex;justify-content:space-between;align-items:center;gap:22px;margin-top:20px}
+.demo-bottom p{font-size:.88rem;max-width:650px;margin:0}.demo-bottom a{flex-shrink:0;font-size:.85rem}
+@media(max-width:650px){.enquiry-demo-top{align-items:stretch;flex-direction:column;padding:20px;gap:16px}.demo-download{flex:auto;align-self:flex-start}.demo-stages{padding:16px 20px}.demo-metrics{grid-template-columns:repeat(2,minmax(0,1fr));padding:18px 20px;gap:9px}.demo-metrics>div{padding:12px}.demo-filters{padding:0 20px 12px}.demo-help{padding:0 20px 12px}.demo-table-wrap{margin:0 20px}.demo-result{padding:12px 20px}.demo-takeaway{padding:18px 20px}.demo-bottom{align-items:flex-start;flex-direction:column;gap:12px}}
