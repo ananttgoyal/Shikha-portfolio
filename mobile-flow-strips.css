@@ -1,0 +1,37 @@
+/* Compact mobile rows for the five homepage groups. Desktop layout is retained. */
+.mobile-flow-controls{display:none}
+@media(max-width:700px){
+.home-page .mobile-flow-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 12px;color:#6a501e;font-size:.73rem;font-weight:600}
+.home-page .mobile-flow-controls>div{display:flex;gap:7px}
+.home-page .mobile-flow-controls button{display:grid;place-items:center;width:40px;height:40px;border:1px solid #cdbb9b;border-radius:50%;background:#fff;color:#061a33;font:inherit;font-size:1.2rem;cursor:pointer}
+.home-page .mobile-flow-controls button:disabled{opacity:.35;cursor:default}
+.home-page .mobile-flow-controls button:focus-visible,.home-page .mobile-flow-strip:focus-visible{outline:3px solid #c98a16;outline-offset:3px}
+.home-page .mobile-flow-strip{display:flex;flex-wrap:nowrap;gap:14px;overflow-x:auto;overflow-y:hidden;max-width:100%;min-width:0;margin:0;padding:2px 2px 15px;scroll-snap-type:x mandatory;scroll-padding-inline:2px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#c98a16 #e8e1d5;align-items:stretch}
+.home-page .mobile-flow-strip::-webkit-scrollbar{height:5px}
+.home-page .mobile-flow-strip::-webkit-scrollbar-thumb{background:#c98a16;border-radius:6px}
+.home-page .mobile-flow-strip>div,.home-page .mobile-flow-strip>article{flex:0 0 min(82vw,310px);min-width:0;width:min(82vw,310px);max-width:none;scroll-snap-align:start;box-sizing:border-box;opacity:1;transform:none;height:auto}
+.home-page .pain-grid .pain-card{padding:20px;min-height:230px}
+.home-page .pain-grid h3{font-size:1.1rem;line-height:1.4}
+.home-page .pain-grid p{font-size:.86rem;line-height:1.65}
+.home-page .pain-no{margin-bottom:12px}
+.home-page .work-example{padding:18px}
+.home-page .work-example-steps>div{padding:16px;min-height:185px}
+.home-page .work-example-steps strong{font-size:.76rem}
+.home-page .work-example-steps p{font-size:.87rem;line-height:1.65}
+.home-page .work-example-steps>div{flex-basis:min(74vw,290px);width:min(74vw,290px)}
+.home-page .engagement-flow{margin-bottom:26px}
+.home-page .engagement-step{padding:20px;min-height:250px}
+.home-page .engagement-step:hover{transform:none}
+.home-page .engagement-step h3{font-size:1.15rem;margin:10px 0}
+.home-page .engagement-step p{font-size:.86rem;line-height:1.65}
+.home-page .engagement-step a{font-size:.85rem;padding-top:14px}
+.home-page .framework-layout{gap:22px}
+.home-page .framework-mobile .card{padding:20px;min-height:155px}
+.home-page .framework-mobile h3{font-size:1.2rem}
+.home-page .framework-mobile p{font-size:.87rem}
+.home-page #framework .mobile-flow-controls{color:#e5bd6b}
+.home-page .proof-grid .proof-card{padding:20px;min-height:225px}
+.home-page .proof-context{white-space:normal;font-size:.63rem;line-height:1.6;border-radius:8px}
+.home-page .proof-grid h3{font-size:1.1rem;line-height:1.5;margin-top:10px}
+.home-page .proof-grid .big{font-size:2.7rem}
+}
