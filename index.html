@@ -29,6 +29,19 @@
 .home-page .office-map-note{margin:0;padding:0 16px 12px;font-size:.78rem;line-height:1.5}
 .home-page .office-map iframe{display:block;width:100%;height:230px;border:0;background:#f6f1e8}
 @media(max-width:600px){.home-page .hero-local-intro{margin-top:16px}.home-page .footer-inner{align-items:flex-start;gap:24px}}
+
+.home-page #content-engine{scroll-margin-top:110px}
+.home-page .content-plan-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:20px}
+.home-page .content-plan-tab{min-width:0;padding:12px 9px;text-align:left;border:1px solid var(--line);border-radius:10px;background:var(--ivory);color:var(--navy);font:inherit;cursor:pointer;line-height:1.45}
+.home-page .content-plan-tab>span{display:block;font-size:.74rem;font-weight:600;min-height:2.9em}
+.home-page .content-plan-tab>strong{display:block;margin-top:7px;font-size:.91rem}
+.home-page .content-plan-tab strong span{font-size:.65rem;font-weight:400}
+.home-page .content-plan-tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.home-page .content-plan-tab[aria-selected="true"] strong{color:#f0cb7b}
+.home-page .content-plan-tab:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.home-page .content-plan-panel{display:flex;flex:1;flex-direction:column}
+.home-page .content-plan-panel h4{margin:0 0 4px;color:var(--navy);font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;line-height:1.4}
+.home-page .content-plan-tabs[hidden],.home-page .content-plan-panel[hidden]{display:none}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://www.shikhasolutions.com/#business","name":"Shikha Solutions","url":"https://www.shikhasolutions.com/","logo":"https://www.shikhasolutions.com/images/shikha-solutions-logo-transparent.webp","description":"Business growth consulting and hands-on execution support in Jaipur for SMEs and startups, across content, lead generation, sales and business systems.","telephone":"+917758859995","email":"anant@shikhasolutions.com","address":{"@type":"PostalAddress","streetAddress":"Commercial Space, E Block, Ground Floor, Ashadeep Green Avenue, Jagatpura","addressLocality":"Jaipur","addressRegion":"Rajasthan","postalCode":"302017","addressCountry":"IN"},"areaServed":{"@type":"City","name":"Jaipur"},"founder":{"@type":"Person","name":"Aanant Goyal"},"sameAs":["https://www.linkedin.com/in/aanantgoyal","https://www.instagram.com/shikhasolutions/","https://www.youtube.com/@ShikhaSolutions"]}</script>
 <meta property="og:type" content="website"><meta property="og:title" content="Business Growth Consultant in Jaipur | Shikha Solutions"><meta property="og:url" content="https://www.shikhasolutions.com/"><meta property="og:image" content="https://www.shikhasolutions.com/images/share-home-1200x630.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.shikhasolutions.com/images/share-home-1200x630.png"><script src="/site-tracking.js?v=20261004-ga4"></script></head>
@@ -68,53 +81,48 @@
     </div>
   </article>
 
-  <!-- CONTENT · CONSISTENT PRESENCE -->
-  <article class="package-card reveal">
+  <!-- CONTENT ENGINE · TWO OPTIONS -->
+  <article class="package-card content-engine-card reveal" id="content-engine">
     <div class="package-head">
-      <div class="tag">Content · Consistent presence</div>
-      <h3>Consistent Presence</h3>
-      <p>Stay visible with regular, professionally managed content while you focus on your business.</p>
-    </div>
-    <div class="package-body">
-      <div class="package-fit">Starting ₹25,000 / month</div>
-      <ul class="offer-list">
-        <li>8 reels + 6 posts/carousels every month</li>
-        <li>1 Jaipur shoot session a month, up to 3 hours at one location</li>
-        <li>Monthly content plan, scripts and hooks (Hindi / Hinglish / English)</li>
-        <li>Editing, subtitles, reel covers and captions</li>
-        <li>Instagram publishing + Facebook cross-posting and repurposed Stories</li>
-        <li>Initial profile setup: bio, highlights and WhatsApp contact link</li>
-        <li>Monthly performance report and improvement call</li>
-      </ul>
-      <p class="offer-best"><strong>Best for:</strong> businesses that want a dependable social media presence with less day-to-day effort.</p>
-      <div class="package-actions">
-        <a href="https://wa.me/917758859995?text=Hi%20Aanant%2C%20I%27m%20interested%20in%20the%20Consistent%20Presence%20package%20starting%20at%20Rs%2025%2C000%20per%20month." class="btn btn-primary" target="_blank" rel="noopener">Talk about Consistent Presence →</a>
-      </div>
-    </div>
-  </article>
-
-  <!-- CONTENT · ORIGINAL IDEAS & CREDIBILITY -->
-  <article class="package-card reveal">
-    <div class="package-head">
-      <div class="tag">Content · Original ideas &amp; credibility</div>
+      <div class="tag">Package 1 · Content</div>
       <h3>Content Engine</h3>
-      <p>Original content ideas that show your expertise, build credibility and help customers understand why to choose you.</p>
+      <p>Choose consistent visibility or original content that shows your expertise and builds credibility.</p>
     </div>
     <div class="package-body">
-      <div class="package-fit">Starting ₹35,000 / month</div>
-      <ul class="offer-list">
-        <li>12 reels + 8 posts/carousels every month</li>
-        <li>1 Jaipur shoot session a month, up to 5 hours at one location</li>
-        <li>Unique content ideas built around your expertise, customer questions and real work</li>
-        <li>Monthly content plan, scripts and hooks (Hindi / Hinglish / English)</li>
-        <li>Editing, subtitles, reel covers and captions</li>
-        <li>Instagram publishing + Facebook cross-posting and repurposed Stories</li>
-        <li>Initial profile setup: bio, highlights and WhatsApp contact link</li>
-        <li>Monthly performance review: test hooks and formats, then refine ideas around what resonates</li>
-      </ul>
-      <p class="offer-best"><strong>Best for:</strong> founders and brands that want to build trust through a distinctive voice and consistent, useful content.</p>
-      <div class="package-actions">
-        <a href="https://wa.me/917758859995?text=Hi%20Aanant%2C%20I%27m%20interested%20in%20the%20Content%20Engine%20package%20starting%20at%20Rs%2035%2C000%20per%20month." class="btn btn-primary" target="_blank" rel="noopener">Talk about Content Engine →</a>
+      <div class="content-plan-tabs" role="tablist" aria-label="Content Engine options" hidden>
+        <button class="content-plan-tab" id="content-presence-tab" type="button" role="tab" aria-selected="true" aria-controls="content-presence-panel"><span>Consistent Presence</span><strong>₹25,000<span> / month</span></strong></button>
+        <button class="content-plan-tab" id="content-original-tab" type="button" role="tab" aria-selected="false" aria-controls="content-original-panel" tabindex="-1"><span>Original Ideas &amp; Credibility</span><strong>₹35,000<span> / month</span></strong></button>
+      </div>
+      <div class="content-plan-panel" id="content-presence-panel" role="tabpanel" aria-labelledby="content-presence-tab">
+        <h4>Consistent Presence</h4>
+        <div class="package-fit">Starting ₹25,000 / month</div>
+        <ul class="offer-list">
+          <li>8 reels + 6 posts/carousels every month</li>
+          <li>1 Jaipur shoot session a month, up to 3 hours at one location</li>
+          <li>Monthly content plan, scripts and hooks (Hindi / Hinglish / English)</li>
+          <li>Editing, subtitles, reel covers and captions</li>
+          <li>Instagram publishing + Facebook cross-posting and repurposed Stories</li>
+          <li>Initial profile setup: bio, highlights and WhatsApp contact link</li>
+          <li>Monthly performance report and improvement call</li>
+        </ul>
+        <p class="offer-best"><strong>Best for:</strong> businesses that want a dependable social media presence with less day-to-day effort.</p>
+        <div class="package-actions"><a href="https://wa.me/917758859995?text=Hi%20Aanant%2C%20I%27m%20interested%20in%20Content%20Engine%20-%20Consistent%20Presence%20starting%20at%20Rs%2025%2C000%20per%20month." class="btn btn-primary" target="_blank" rel="noopener">Choose Consistent Presence →</a></div>
+      </div>
+      <div class="content-plan-panel" id="content-original-panel" role="tabpanel" aria-labelledby="content-original-tab">
+        <h4>Original Ideas &amp; Credibility</h4>
+        <div class="package-fit">Starting ₹35,000 / month</div>
+        <ul class="offer-list">
+          <li>12 reels + 8 posts/carousels every month</li>
+          <li>1 Jaipur shoot session a month, up to 5 hours at one location</li>
+          <li>Unique content ideas built around your expertise, customer questions and real work</li>
+          <li>Monthly content plan, scripts and hooks (Hindi / Hinglish / English)</li>
+          <li>Editing, subtitles, reel covers and captions</li>
+          <li>Instagram publishing + Facebook cross-posting and repurposed Stories</li>
+          <li>Initial profile setup: bio, highlights and WhatsApp contact link</li>
+          <li>Monthly report and review call: test hooks and formats, then refine ideas around what resonates</li>
+        </ul>
+        <p class="offer-best"><strong>Best for:</strong> founders and brands that want to build trust through a distinctive voice and consistent, useful content.</p>
+        <div class="package-actions"><a href="https://wa.me/917758859995?text=Hi%20Aanant%2C%20I%27m%20interested%20in%20Content%20Engine%20-%20Original%20Ideas%20%26%20Credibility%20starting%20at%20Rs%2035%2C000%20per%20month." class="btn btn-primary" target="_blank" rel="noopener">Choose Original Ideas &amp; Credibility →</a></div>
       </div>
     </div>
   </article>
@@ -191,7 +199,7 @@
 </div>
 
 <div class="offer-combo reveal">
-  <strong>Content Engine + Leads &amp; Sales Engine:</strong> starting ₹75,000 / month. Most businesses get the best results when people see you every day <em>and</em> every enquiry is followed up.
+  <strong>Content Engine + Leads &amp; Sales Engine:</strong> starting ₹75,000 / month. Includes the Original Ideas &amp; Credibility content option, paired with campaigns and sales follow-up.
   <a href="https://wa.me/917758859995?text=Hi%20Aanant%2C%20I%27m%20interested%20in%20the%20Content%20%2B%20Leads%20combo." target="_blank" rel="noopener">Ask about the combo →</a>
 </div>
 
@@ -212,5 +220,29 @@
 <script>
 (()=>{const strip=document.getElementById('testimonial-strip');if(!strip)return;const buttons=[...document.querySelectorAll('[data-testimonial-direction]')];const sync=()=>{buttons.forEach(b=>{b.disabled=Number(b.dataset.testimonialDirection)<0?strip.scrollLeft<=2:strip.scrollLeft+strip.clientWidth>=strip.scrollWidth-2;});};buttons.forEach(b=>b.addEventListener('click',()=>{const card=strip.querySelector('.testimonial-card');strip.scrollBy({left:Number(b.dataset.testimonialDirection)*(card.getBoundingClientRect().width+18),behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}));strip.addEventListener('scroll',sync,{passive:true});window.addEventListener('resize',sync);sync();})();
 </script>
-<script>document.querySelectorAll(".office-map").forEach(function(panel){panel.addEventListener("toggle",function(){if(!panel.open)return;var frame=panel.querySelector("iframe[data-map-src]");if(frame&&!frame.hasAttribute("src"))frame.src=frame.dataset.mapSrc;});});</script></body>
+<script>document.querySelectorAll(".office-map").forEach(function(panel){panel.addEventListener("toggle",function(){if(!panel.open)return;var frame=panel.querySelector("iframe[data-map-src]");if(frame&&!frame.hasAttribute("src"))frame.src=frame.dataset.mapSrc;});});</script><script>
+(function(){
+  var card=document.getElementById('content-engine');if(!card)return;
+  var list=card.querySelector('.content-plan-tabs');
+  var tabs=Array.from(list.querySelectorAll('[role="tab"]'));
+  var panels=Array.from(card.querySelectorAll('.content-plan-panel'));
+  function select(index,focus){
+    tabs.forEach(function(tab,i){var active=i===index;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;panels[i].hidden=!active;});
+    if(focus)tabs[index].focus();
+  }
+  tabs.forEach(function(tab,index){
+    tab.addEventListener('click',function(){select(index,false);});
+    tab.addEventListener('keydown',function(event){
+      var next=index;
+      if(event.key==='ArrowRight')next=(index+1)%tabs.length;
+      else if(event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;
+      else if(event.key==='Home')next=0;
+      else if(event.key==='End')next=tabs.length-1;
+      else return;
+      event.preventDefault();select(next,true);
+    });
+  });
+  list.hidden=false;select(0,false);
+})();
+</script></body>
 </html>
