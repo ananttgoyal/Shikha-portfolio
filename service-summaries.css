@@ -12,3 +12,5 @@
 .service-summary-card a:focus-visible{outline:3px solid #c19536;outline-offset:4px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:600px){.home-page #monthly-packages .service-summary-card{flex-basis:275px!important;width:275px!important;height:350px!important}}
+
+.home-page{overflow-x:clip}.home-page #monthly-packages{scroll-margin-top:115px}
