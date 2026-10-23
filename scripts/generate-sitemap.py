@@ -10,7 +10,7 @@ if (root/'sitemap.xml').exists():
   existing[node.find('s:loc',ns).text]=node.findtext('s:lastmod',None,ns)
 urls={}
 for p in root.rglob('*.html'):
- if p.name.startswith('google') or 'monthly-growth-retainer' in p.parts:continue
+ if p.name.startswith('google') or any(x in p.parts for x in ('monthly-growth-retainer','90-day-growth-execution-partnership')):continue
  s=p.read_text()
  if re.search(r'name="robots"[^>]*content="[^"]*noindex',s):continue
  m=re.search(r'<link[^>]*rel="canonical"[^>]*href="([^"]+)"',s)
