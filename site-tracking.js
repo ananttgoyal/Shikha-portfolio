@@ -61,9 +61,11 @@
     preferences:banner
   };
   initPixel();initAnalytics();
-  document.addEventListener('DOMContentLoaded',function(){
+  function initialisePage(){
     document.querySelectorAll('form').forEach(function(form){KEYS.concat(['landing_path']).forEach(function(key){var input=document.createElement('input');input.type='hidden';input.name=key;input.value=campaign[key]||'';form.appendChild(input)})});
-    document.querySelectorAll('[data-tracking-preferences]').forEach(function(x){x.addEventListener('click',banner)});
+    document.addEventListener('click',function(event){var control=event.target.closest('[data-tracking-preferences]');if(control){event.preventDefault();banner();var first=document.querySelector('#tracking-choice button');if(first)first.focus();}});
     if(!readConsent())banner();
-  });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initialisePage,{once:true});else initialisePage();
 })();
+

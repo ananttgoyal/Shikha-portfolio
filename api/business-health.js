@@ -140,6 +140,7 @@ module.exports = async function handler(req, res) {
     await sendWithResend(apiKey, {
       from: FROM,
       to: [email],
+      bcc: [OWNER],
       reply_to: OWNER,
       subject: `Your Shikha Solutions Business Health Report — ${overall}/100`,
       html: reportEmail({ name, overall, title, overallText, categories, alerts, businessName, industry }),
