@@ -1,0 +1,57 @@
+/* Consistent, readable typography across the homepage. */
+.home-page{font-family:Inter,Arial,sans-serif;font-size:16px;line-height:1.7}
+.home-page h1,.home-page h2,.home-page h3,.home-page h4,.home-page .hero h1,.home-page .section h2,.home-page .single-work-card h3{font-family:Manrope,Arial,sans-serif!important;text-transform:none!important;letter-spacing:-.03em!important;font-weight:800}
+.home-page .section h2,.home-page .audience-section h2{font-size:clamp(1.75rem,2.7vw,2.35rem);line-height:1.25}
+.home-page h3{line-height:1.4}
+.home-page .hero .hero-copy{font-size:17px;line-height:1.75}
+.home-page .hero .hero-photo-proof small{font-size:12px;line-height:1.6;letter-spacing:0}
+.home-page .hero .hero-first-step{font-size:13px}
+.home-page .hero-results-label{font-size:13px}
+.home-page .hero-result>small,.home-page .hero-results-label>span,.home-page .hero-result>span{font-size:12px}
+.home-page .hero-result>strong{font-size:18px}
+.home-page .audience-card p,.home-page #problems p,.home-page .single-work-card>p,.home-page .video-card-copy>p{font-size:15px;line-height:1.7}
+.home-page .audience-card h3,.home-page #problems h3{font-size:18px}
+.home-page .audience-card strong,.home-page .single-work-card a,.home-page .work-monthly-options summary,.home-page .work-approach{font-size:14px}
+.home-page .section-intro{font-size:16px;line-height:1.75;max-width:68ch}
+.home-page .single-work-card{padding:22px 18px;gap:0;min-height:0}
+.home-page .single-work-card h3{font-size:20px!important;line-height:1.35!important;margin:10px 0!important;min-height:54px}
+.home-page .single-work-card .work-small{font-size:13px;line-height:1.65}
+.home-page .single-work-card .work-main-link,.home-page .single-work-card>.work-links{margin-top:auto;padding-top:14px}
+.home-page .single-work-card>p{margin:0 0 12px}
+.home-page .single-work-card .work-monthly-options{margin-top:14px}
+.home-page .single-work-section .section-head{margin-bottom:20px}
+.home-page .single-work-toolbar{font-size:13px}
+.home-page .single-work-toolbar:has(button:disabled+button:disabled){display:none}
+.home-page .reveal{opacity:1!important;transform:none!important;transition:none!important}
+.home-page .section{padding-block:54px}
+.home-page .single-work-section{padding-block:44px}
+.home-page #testimonials .testimonial-card blockquote{font-family:Inter,Arial,sans-serif;font-weight:400;font-size:16px;line-height:1.75;min-height:0}
+.home-page #testimonials .testimonial-card{padding:22px;flex-basis:350px}
+.home-page #testimonials .testimonial-scope{font-size:13px;min-height:0;line-height:1.6}
+.home-page #testimonials .testimonial-brand h3{font-size:19px}
+.home-page #testimonials .testimonial-author{font-size:15px}
+.home-page #testimonials .testimonial-author span,.home-page #testimonials summary{font-size:13px}
+.home-page .founder-heading{margin-bottom:24px}
+.home-page #founder .founder-compact{display:grid;grid-template-columns:280px minmax(0,1fr);grid-template-rows:auto;gap:38px;align-items:start}
+.home-page #founder .founder-compact .founder-left{display:block;max-width:280px}
+.home-page #founder .founder-compact .founder-copy{grid-column:auto;grid-row:auto;padding:0;border:0;background:none}
+.home-page .founder-video-frame{padding:8px;box-shadow:0 8px 24px #061a3310}
+.home-page .founder-video-label span{font-size:11px}
+.home-page .founder-video-label strong{font-family:Manrope,Arial,sans-serif;font-size:15px}
+.home-page .founder-copy h3{font-size:28px;margin:6px 0 16px}
+.home-page .founder-copy p{font-size:16px;line-height:1.75;margin:0 0 14px;max-width:68ch}
+.founder-strengths{list-style:none;margin:20px 0 24px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.founder-strengths li{border-top:2px solid #c98a16;padding-top:10px}
+.founder-strengths strong{display:block;color:var(--navy);font-family:Manrope,Arial,sans-serif;font-size:16px}
+.founder-strengths span{display:block;font-size:14px;color:#5d6873;margin-top:4px;line-height:1.6}
+.home-page .founder-copy .founder-reassurance{font-size:13px;margin-top:12px}
+.home-page .faq-list summary{font-family:Manrope,Arial,sans-serif;font-size:17px}
+.home-page .faq-list p{font-size:16px;line-height:1.75}
+.home-page #contact .contact-grid{gap:36px}
+.home-page #contact .contact-panel{padding:22px}
+.home-page .contact-item{padding:10px 0;font-size:15px;line-height:1.7}
+.home-page .office-map summary{font-size:14px}
+.home-page .btn,.home-page summary,.home-page input,.home-page select{font-family:Inter,Arial,sans-serif}
+.home-page .hero .hero-actions .btn{font-size:14px}
+@media(max-width:980px){.home-page #founder .founder-compact{grid-template-columns:240px minmax(0,1fr);gap:26px}.home-page .founder-strengths{grid-template-columns:1fr;gap:12px}.home-page .single-work-card h3{min-height:0}}
+@media(max-width:700px){.home-page .section{padding-block:36px}.home-page .hero .hero-copy{font-size:16px}.home-page .hero-result>strong{font-size:18px}.home-page #founder .founder-compact{display:flex;flex-direction:column;gap:24px}.home-page #founder .founder-compact .founder-left{width:230px;max-width:100%;align-self:center}.home-page .founder-copy p{font-size:16px}.home-page .founder-strengths{grid-template-columns:1fr}.home-page .single-work-card{min-height:0;flex-basis:87%}.home-page .single-work-card h3{font-size:21px!important}.home-page #testimonials .testimonial-card{flex-basis:310px}.home-page #contact .contact-grid{gap:24px}}
