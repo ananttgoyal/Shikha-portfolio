@@ -76,7 +76,7 @@ $('report-form').addEventListener('submit',async event=>{
    :'Shikha Solutions received your details. Your score is shown below, but we could not confirm the email copy. Please save this page or contact us on WhatsApp.';
   $('results-heading').insertAdjacentElement('afterend',notice);
  }catch(error){
-  status.textContent=(error&&error.message?error.message:'The submission could not be completed.')+' Your answers are saved on this page. Please retry or contact us on WhatsApp.';
+  status.textContent=(error&&error.message?error.message:'The submission could not be completed.')+' Your answers are still available on this page.';
   button.disabled=false;
  }
 });
