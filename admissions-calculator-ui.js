@@ -43,6 +43,7 @@ form.addEventListener('submit',event=>{
   const msg='Hi Aanant, I used the Shikha Solutions Coaching Admissions Calculator. My current conversion is '+pct(calc.rate)+', my desired admissions target is '+number.format(p.target)+', and the estimate is '+fmt(calc.projectedLeadDay)+' leads/day. I want help with more qualified leads, enquiry follow-up and counselling conversions.';
   byId('results-whatsapp').href='https://wa.me/917758859995?text='+encodeURIComponent(msg);
   byId('calc-results').hidden=false;
+  if(window.ShikhaTracking&&typeof window.ShikhaTracking.event==='function')window.ShikhaTracking.event('calculator_completed',{tool_name:'coaching_admissions'});
   byId('result-heading').focus();
   byId('calc-results').scrollIntoView({behavior:'smooth',block:'start'});
  }catch(error){
@@ -52,4 +53,11 @@ form.addEventListener('submit',event=>{
  }
 });
 byId('calc-print').addEventListener('click',()=>{window.print()});
+['results-whatsapp','results-audit'].forEach(function(id){
+ const node=byId(id);
+ if(node)node.addEventListener('click',function(){
+  if(window.ShikhaTracking&&typeof window.ShikhaTracking.event==='function')
+   window.ShikhaTracking.event('calculator_cta_click',{tool_name:'coaching_admissions',action_name:id==='results-whatsapp'?'whatsapp':'book_audit'});
+ });
+});
 })();
