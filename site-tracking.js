@@ -58,6 +58,16 @@
   window.ShikhaTracking={
     attribution:function(){return Object.assign({},campaign)},
     lead:function(formName){if(readConsent()!=='accepted'||leadSent.has(formName))return;initPixel();initAnalytics();leadSent.add(formName);window.fbq('track','Lead',{content_name:formName});window.gtag('event','generate_lead',{send_to:GA_ID,form_name:formName})},
+    event:function(name,metadata){
+      if(readConsent()!=='accepted'||typeof name!=='string'||!/^([a-z][a-z0-9_]{1,39})$/.test(name))return;
+      initAnalytics();
+      if(!window.gtag)return;
+      var values={};
+      if(metadata&&typeof metadata==='object'&&['tool_name','action_name'].some(function(k){return typeof metadata[k]==='string'})){
+        ['tool_name','action_name'].forEach(function(k){if(typeof metadata[k]==='string')values[k]=metadata[k].slice(0,60)})
+      }
+      window.gtag('event',name,Object.assign({send_to:GA_ID},values));
+    },
     preferences:banner
   };
   initPixel();initAnalytics();
