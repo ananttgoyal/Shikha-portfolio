@@ -49,3 +49,14 @@ footer nav{gap:20px}
 @media(max-width:940px){.calc-layout{grid-template-columns:1fr}.results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.calculator-hero{padding:36px 0}.calculator-main{padding:30px 0}.input-panel{padding:22px}.form-rows{grid-template-columns:1fr}.form-rows label.full-width{grid-column:auto}.results-grid,.guide-grid,.formula-grid{grid-template-columns:1fr}.result-card{min-height:0}.result-card strong{font-size:1.9rem}.results-cta,.interpretation{padding:21px}.results-cta .btn{width:100%}}
 @media print{header,.calculator-hero,.calculator-main,.guide-section,footer,.results-cta,.text-button{display:none!important}body{background:#fff}.result-section{background:#fff;padding:0}.result-card{break-inside:avoid}.results-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.result-card.featured{background:#e7e2db;color:black}.result-card.featured strong,.result-card.featured span{color:#09203d}}
+
+.calculator-breadcrumb{font-size:.78rem;display:flex;flex-wrap:wrap;gap:9px;align-items:center;color:#546275;margin:0 0 22px}
+.calculator-breadcrumb a{font-weight:600;color:#09203d;text-decoration:underline;text-decoration-color:#c6a366;text-underline-offset:3px}
+.admissions-faq{background:#f2eadb}
+.admissions-faq-list{max-width:960px;margin-top:25px}
+.admissions-faq-list details{padding:0;border-bottom:1px solid #d8cbb6}
+.admissions-faq-list summary{padding:19px 12px 19px 0;line-height:1.4;font-weight:700;cursor:pointer}
+.admissions-faq-list details[open] summary{color:#845f20}
+.admissions-faq-list details p{padding:0 18px 18px 0;max-width:880px;font-size:.9rem;line-height:1.8;margin:0;color:#2a3b50}
+.admissions-faq-list summary:focus-visible{outline:3px solid #c9a563;outline-offset:2px}
+@media print{.admissions-faq{display:none!important}}
