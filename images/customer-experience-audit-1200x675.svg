@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Customer experience article graphic showing five customer touchpoints">
+<rect width="1200" height="675" fill="#071d3b"/><circle cx="1100" cy="70" r="250" fill="#103055"/><circle cx="1050" cy="38" r="130" fill="#1d4267"/>
+<rect x="56" y="56" width="1088" height="564" rx="24" fill="none" stroke="#ccab63" stroke-opacity=".68" stroke-width="2"/>
+<text x="100" y="128" fill="#f1d08a" font-family="Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="3">SHIKHA SOLUTIONS · BUSINESS GROWTH</text>
+<text x="100" y="245" fill="#ffffff" font-family="Arial,sans-serif" font-size="72" font-weight="700">WHY CUSTOMERS</text>
+<text x="100" y="329" fill="#f2ca76" font-family="Arial,sans-serif" font-size="73" font-weight="700">DON'T COME BACK</text>
+<text x="103" y="389" fill="#d6e1ea" font-family="Arial,sans-serif" font-size="29">Even when your product is good</text>
+<line x1="100" y1="433" x2="1105" y2="433" stroke="#ba9854" stroke-width="2"/>
+<text x="100" y="475" fill="#e9c47b" font-family="Arial,sans-serif" font-size="22" font-weight="700">THE 5-STEP CUSTOMER EXPERIENCE AUDIT</text>
+<g font-family="Arial,sans-serif" font-size="20" fill="#ffffff" text-anchor="middle">
+<rect x="100" y="507" width="183" height="64" rx="9" fill="#294762"/><text x="191" y="547">ENQUIRY</text>
+<rect x="303" y="507" width="183" height="64" rx="9" fill="#294762"/><text x="394" y="547">BOOKING</text>
+<rect x="506" y="507" width="183" height="64" rx="9" fill="#294762"/><text x="597" y="547">WAITING</text>
+<rect x="709" y="507" width="183" height="64" rx="9" fill="#294762"/><text x="800" y="547">DELIVERY</text>
+<rect x="912" y="507" width="193" height="64" rx="9" fill="#294762"/><text x="1008" y="547">FOLLOW-UP</text>
+</g></svg>
