@@ -50,11 +50,11 @@ header{background:var(--navy);color:white;border-bottom:1px solid #ffffff22}.hea
 <li>A written seven-day action commitment</li>
 <li>An intimate unplugged guitar jam — no pitches or sales presentations</li>
 </ul>
-<div class="notice"><strong>Tickets:</strong> ₹1,299 for selected founders completing payment by 22 November; ₹1,499 regular afterward. Includes brunch.<br><br><strong>How selection works:</strong> Apply free today → personal review → private invitation → payment to confirm. Applying does not guarantee a seat. You may request the general venue area before payment.<br><br><a class="pay-link" href="/pay/?item=sur-samvad">Received your invitation? Pay ₹1,299 securely to confirm your seat →</a><span class="pay-note">UPI, cards, net banking and wallets via Razorpay. Instant email receipt.</span></div>
+<div class="notice"><strong>Tickets:</strong> ₹1,299 for selected founders completing payment by 22 November; ₹1,499 regular afterward. Includes brunch.<br><br><strong>How it works:</strong> Submit your application → pay ₹1,299 on the next screen to confirm your seat. You may request the general venue area before payment.<br><br><a class="pay-link" href="/pay/?item=sur-samvad">Received your invitation? Pay ₹1,299 securely to confirm your seat →</a><span class="pay-note">UPI, cards, net banking and wallets via Razorpay. Instant email receipt.</span></div>
 <div class="score"><h3>Want to prepare for the discussion?</h3><p>Our free 15-question Business Growth Score can help you identify where sales, team, operations or systems need attention. A low score is <strong>not</strong> required to qualify. The score is self-reported and is <strong>optional</strong>.</p><a href="/business-health.html" target="_blank" rel="noopener noreferrer">Take the free Growth Score ↗</a></div>
 </section>
 <section class="panel" id="application" aria-labelledby="form-title">
-<div class="kicker">Two-minute application · No payment now</div>
+<div class="kicker">Two-minute application · Then confirm your seat</div>
 <h2 id="form-title">Apply for the Founding Edition</h2>
 <p>Tell us who you are, the challenge you'd like to discuss, and the experience you can contribute. We review applications to keep conversations relevant and respectful.</p>
 <form id="founder-form">
@@ -103,7 +103,7 @@ header{background:var(--navy);color:white;border-bottom:1px solid #ffffff22}.hea
       var result=await response.json().catch(function(){return {};});
       if(!response.ok||!result.ok)throw new Error(result.error||'Unable to submit at the moment.');
       status.className='status success';
-      status.textContent='Application received. Thank you! We will review your profile and contact selected founders. No payment is needed now.'+(result.confirmationSent?' Please check your email for an acknowledgment.':' You can save this message as confirmation of submission.');
+      status.textContent='';var t=document.createElement('p');t.style.margin='0 0 12px';t.textContent='Application received. Thank you! Pay ₹1,299 now to confirm your seat at Sur & Samvad.'+(result.confirmationSent?' Please check your email for an acknowledgment.':'');var a=document.createElement('a');a.className='pay-link';a.href='/pay/?item=sur-samvad';a.textContent='Pay ₹1,299 securely to confirm my seat →';var n=document.createElement('span');n.className='pay-note';n.textContent='UPI, cards, net banking and wallets via Razorpay. Instant email receipt.';status.appendChild(t);status.appendChild(a);status.appendChild(n);
       form.reset();
       status.scrollIntoView({behavior:'smooth',block:'center'});
     }catch(err){
