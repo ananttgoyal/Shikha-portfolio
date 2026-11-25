@@ -33,6 +33,13 @@ header{background:var(--navy);color:white;border-bottom:1px solid #ffffff22}.hea
 .hero-event-card .detail b{color:#f5d18c;font-size:18px}
 .hero-event-card .price{font-size:32px;color:#f1c372;font-weight:800;line-height:1.25;margin-top:16px}
 .hero-event-card .smallnote{font-size:12px;color:#d8dee6}
+.hero-event-card{overflow:hidden;padding:29px 25px 0}
+.hero-event-card .event-photo{position:relative;margin:19px -25px 0;height:205px;overflow:hidden;border-top:1px solid #d7ad6259;background:#19283c}
+.hero-event-card .event-photo::before{content:"";position:absolute;inset:0;background-image:url('/images/sur-samvad-founders-private-table.jpg');background-size:110% auto;background-position:center 51%;background-repeat:no-repeat;filter:saturate(1.06) brightness(.94)}
+.hero-event-card .event-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#09192c 0%,#09192c00 48%,#09192c22 100%)}
+.hero-event-card .photo-caption{position:absolute;z-index:2;bottom:10px;left:0;right:0;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px #000;padding:0 12px}
+@media(max-width:760px){.hero-event-card .event-photo{height:170px}}
+
 </style>
 </head>
 <body>
@@ -46,7 +53,7 @@ header{background:var(--navy);color:white;border-bottom:1px solid #ffffff22}.hea
 <a class="cta" href="#application">Apply for a seat ↓</a>
 <a class="cta cta-pay" href="/pay/?item=sur-samvad">Invited? Pay ₹1,499 to confirm →</a>
 <small>No pitches. No selling. Venue details shared privately with selected founders.</small>
-</div><aside class="hero-event-card" aria-label="Event details"><div class="micro">Shikha Solutions presents</div><h3>SUR &amp; SAMVAD</h3><div class="line">THE FOUNDERS’ PRIVATE TABLE</div><div class="detail"><div class="micro">Founding edition</div><b>Sunday, 6 December 2026</b></div><div class="detail"><div class="micro">Time · Jaipur</div><b>5:00 PM – 8:00 PM</b><br><span class="smallnote">Private venue shared with selected founders</span></div><div class="detail"><b>15 curated founder seats</b><br><span class="smallnote">Real challenges · No pitches · Music</span></div><div class="price">₹1,499</div><div class="smallnote">Fixed seat price · Evening refreshments included</div></aside></div></section>
+</div><aside class="hero-event-card" aria-label="Event details"><div class="micro">Shikha Solutions presents</div><h3>SUR &amp; SAMVAD</h3><div class="line">THE FOUNDERS’ PRIVATE TABLE</div><div class="detail"><div class="micro">Founding edition</div><b>Sunday, 6 December 2026</b></div><div class="detail"><div class="micro">Time · Jaipur</div><b>5:00 PM – 8:00 PM</b><br><span class="smallnote">Private venue shared with selected founders</span></div><div class="detail"><b>15 curated founder seats</b><br><span class="smallnote">Real challenges · No pitches · Music</span></div><div class="price">₹1,499</div><div class="smallnote">Fixed seat price · Evening refreshments included</div><div class="event-photo" role="img" aria-label="Illustrative candlelit founder roundtable with guitar"><div class="photo-caption">Real conversations · A soulful jam</div></div></aside></div></section>
 <main class="container layout">
 <section class="info" aria-label="About the founders' table">
 <h2>Not another networking event.</h2>
