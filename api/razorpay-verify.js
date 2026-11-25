@@ -63,7 +63,7 @@ module.exports = async function handler(req, res) {
     const rows = [['Paid for', n.product_name], ['Amount', amount], ['Payment ID', paymentId], ['Order ID', orderId], ['Name', n.customer_name], ['Business', n.business], ['Email', n.email], ['Phone', n.phone], ['Method', payment.method], ['Status', payment.status]];
     const table = rows.map(([k, v]) => '<tr><td style="padding:8px;border-bottom:1px solid #eee;color:#687083;width:150px">' + esc(k) + '</td><td style="padding:8px;border-bottom:1px solid #eee">' + esc(v || '—') + '</td></tr>').join('');
     const nextStep = n.product === 'sur-samvad'
-      ? 'Your seat at Sur &amp; Samvad (Sunday, 29 November 2026, 12:00 PM, Jaipur) is confirmed. We will share the exact venue privately on WhatsApp before the event.'
+      ? 'Your seat at Sur &amp; Samvad (Sunday, 6 December 2026, 5:00–8:00 PM, Jaipur) is confirmed. We will share the exact venue privately on WhatsApp before the event.'
       : 'We will WhatsApp you within one working day to fix your Day 0 call, where we agree the metric and baseline for your Sprint.';
     const jobs = [
       send(process.env.RESEND_API_KEY, {
