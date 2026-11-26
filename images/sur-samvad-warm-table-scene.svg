@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 940" role="img" aria-label="Warm private founders roundtable with acoustic guitar and lounge seating">
+<defs>
+<linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffaf0"/><stop offset=".52" stop-color="#f5e6d1"/><stop offset="1" stop-color="#d6ab76"/></linearGradient>
+<linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dcb58a"/><stop offset="1" stop-color="#aa7e58"/></linearGradient>
+<linearGradient id="wood" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#b77742"/><stop offset=".45" stop-color="#704522"/><stop offset="1" stop-color="#432b20"/></linearGradient>
+<linearGradient id="chair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9c7a0"/><stop offset=".56" stop-color="#b6895d"/><stop offset="1" stop-color="#806041"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b9792f"/><stop offset=".5" stop-color="#efc87f"/><stop offset="1" stop-color="#9e672d"/></linearGradient>
+<radialGradient id="light"><stop stop-color="#fff1ce" stop-opacity=".88"/><stop offset="1" stop-color="#fff1ce" stop-opacity="0"/></radialGradient>
+<radialGradient id="guitarBody"><stop stop-color="#e9aa4f"/><stop offset=".66" stop-color="#b46a31"/><stop offset="1" stop-color="#5e311a"/></radialGradient>
+<filter id="shadow" x="-40%" y="-50%" width="180%" height="220%"><feGaussianBlur stdDeviation="13"/></filter>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+<pattern id="linen" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0 0V10" stroke="#9b6e46" stroke-opacity=".13" stroke-width="1"/></pattern>
+</defs>
+<rect width="760" height="940" fill="url(#wall)"/>
+<rect width="760" height="940" fill="url(#linen)" opacity=".38"/>
+<path d="M660 0H760V755H660Z" fill="#dfbc8e" opacity=".43"/>
+<path d="M681 0V725M716 0V725M750 0V725" stroke="#a9794a" stroke-opacity=".38" stroke-width="3"/>
+<ellipse cx="600" cy="380" rx="260" ry="390" fill="url(#light)" opacity=".6"/>
+<path d="M0 736Q375 693 760 748V940H0Z" fill="url(#floor)"/>
+<path d="M0 785Q410 775 760 789" stroke="#704521" stroke-opacity=".23" stroke-width="3" fill="none"/>
+<ellipse cx="385" cy="865" rx="335" ry="65" fill="#5a311e" opacity=".26" filter="url(#shadow)"/>
+<!-- modern floor lamp -->
+<ellipse cx="677" cy="480" rx="115" ry="135" fill="url(#light)" opacity=".85"/>
+<path d="M659 385h77l24 78H634Z" fill="#c59355" stroke="#a97438" stroke-width="5"/>
+<path d="M650 389h95l-9-17h-77Z" fill="#f7dfb2"/>
+<path d="M660 399h72l21 58H638Z" fill="#fae5ba"/>
+<ellipse cx="693" cy="462" rx="58" ry="9" fill="#a67b43" opacity=".25"/>
+<path d="M694 461V770" stroke="#94704c" stroke-width="8"/>
+<ellipse cx="694" cy="770" rx="35" ry="8" fill="#886340"/>
+<!-- large background plant -->
+<path d="M532 755v-105" stroke="#61704b" stroke-width="7" fill="none"/>
+<g fill="#728350" opacity=".88">
+<ellipse cx="518" cy="628" rx="16" ry="49" transform="rotate(-39 518 628)"/>
+<ellipse cx="556" cy="608" rx="15" ry="52" transform="rotate(24 556 608)"/>
+<ellipse cx="501" cy="671" rx="14" ry="43" transform="rotate(-55 501 671)"/>
+<ellipse cx="570" cy="652" rx="14" ry="45" transform="rotate(56 570 652)"/>
+<ellipse cx="527" cy="575" rx="15" ry="42" transform="rotate(-6 527 575)"/>
+</g>
+<path d="M499 732h66l-10 61h-45Z" fill="url(#gold)"/>
+<!-- chair backs -->
+<ellipse cx="132" cy="734" rx="98" ry="139" fill="#5c321b" opacity=".15" filter="url(#shadow)"/>
+<path d="M62 796V689Q67 613 132 610Q209 609 224 686V794Z" fill="url(#chair)" stroke="#92704c" stroke-width="7"/>
+<path d="M89 776V687Q99 641 139 640Q188 643 192 696V772" fill="none" stroke="#e5c39a" stroke-width="5" opacity=".7"/>
+<path d="M302 763V646Q312 587 370 587Q431 590 445 649V767" fill="url(#chair)" stroke="#906b4a" stroke-width="8"/>
+<path d="M326 730V644Q331 609 370 608Q404 610 416 648V730" stroke="#e8c79c" stroke-width="5" fill="none" opacity=".75"/>
+<path d="M559 799V692Q567 628 632 629Q701 632 711 688V801" fill="url(#chair)" stroke="#805a3a" stroke-width="7"/>
+<!-- guitar leaning on right wall -->
+<g transform="translate(645 488) rotate(13)">
+<path d="M0 0v178" stroke="#633818" stroke-width="21" stroke-linecap="round"/>
+<path d="M0 0v177" stroke="#a86e35" stroke-width="14"/>
+<rect x="-12" y="-36" width="24" height="53" rx="5" fill="#704022"/>
+<g fill="#d3b477"><circle cx="-14" cy="-24" r="5"/><circle cx="14" cy="-20" r="5"/><circle cx="-14" cy="-8" r="5"/><circle cx="14" cy="-4" r="5"/></g>
+<path d="M-9 25H9M-9 42H9M-9 59H9M-9 76H9M-9 93H9M-9 110H9" stroke="#e5bf77" stroke-width="3"/>
+<path d="M-38 180C-90 139-106 234-68 261C-110 327-67 372 0 372C66 372 109 328 68 261C105 234 89 139 38 180C21 191 9 201 0 201C-9 201-21 191-38 180Z" fill="url(#guitarBody)" stroke="#5a2e14" stroke-width="10"/>
+<path d="M-52 219Q-91 273-53 310" stroke="#edc482" stroke-width="6" fill="none" opacity=".7"/>
+<circle cy="260" r="38" fill="#3f251d" stroke="#e4b66f" stroke-width="7"/>
+<circle cy="260" r="27" fill="#2d1b17"/>
+<rect x="-31" y="333" width="62" height="9" rx="3" fill="#4d2b1b"/>
+<g stroke="#f5d9a7" stroke-width="1.4"><path d="M-8 -31v372"/><path d="M-5 -31v372"/><path d="M-2 -31v372"/><path d="M2 -31v372"/><path d="M5 -31v372"/><path d="M8 -31v372"/></g>
+</g>
+<!-- front chair -->
+<path d="M32 893V790Q41 758 93 760Q174 751 193 792V912H32Z" fill="url(#chair)" stroke="#946a49" stroke-width="8"/>
+<!-- polished round table -->
+<ellipse cx="359" cy="797" rx="252" ry="53" fill="#4b2c1a" opacity=".32" filter="url(#shadow)"/>
+<path d="M330 804h60l24 116h-106Z" fill="#67452c"/>
+<ellipse cx="360" cy="764" rx="253" ry="63" fill="url(#wood)" stroke="#c3894c" stroke-width="9"/>
+<ellipse cx="360" cy="758" rx="225" ry="45" fill="none" stroke="#dba460" stroke-opacity=".6" stroke-width="2"/>
+<ellipse cx="360" cy="774" rx="220" ry="42" fill="#dfb37f" opacity=".06"/>
+<!-- table decor -->
+<path d="M330 746h64l-7 37h-49Z" fill="#a47340" stroke="#d8b578" stroke-width="2"/>
+<ellipse cx="362" cy="744" rx="29" ry="7" fill="#e6c899"/>
+<g fill="#718755"><ellipse cx="357" cy="711" rx="14" ry="22"/><ellipse cx="335" cy="722" rx="10" ry="20" transform="rotate(-30 335 722)"/><ellipse cx="380" cy="722" rx="10" ry="20" transform="rotate(30 380 722)"/></g>
+<rect x="232" y="750" width="72" height="11" rx="3" fill="#303f4c" transform="rotate(-8 232 750)"/>
+<rect x="241" y="744" width="68" height="7" rx="2" fill="#b99565" transform="rotate(-8 241 744)"/>
+<rect x="440" y="741" width="88" height="14" rx="3" fill="#3b4853" transform="rotate(7 440 741)"/>
+<rect x="447" y="736" width="77" height="7" rx="2" fill="#dab888" transform="rotate(7 447 736)"/>
+<!-- candle warm glow -->
+<ellipse cx="408" cy="751" rx="55" ry="70" fill="url(#light)" opacity=".65"/>
+<rect x="401" y="732" width="16" height="35" rx="3" fill="#e2b568" stroke="#9d7135"/>
+<path d="M409 728Q400 721 410 709Q418 722 409 728" fill="#fae5a8"/>
+<!-- warm translucent foreground -->
+<rect y="840" width="760" height="100" fill="url(#wall)" opacity=".25"/>
+</svg>
