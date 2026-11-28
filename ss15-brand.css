@@ -36,3 +36,27 @@ body .ss-framework h2{color:var(--ss-ivory);font-size:clamp(2.2rem,4vw,3.35rem);
 .ss-framework .ss-framework-tagline{border-top:1px solid var(--ss-gold);padding-top:20px;margin:24px 0 0;text-align:center;color:var(--ss-light-gold);font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 @media(max-width:900px){body.home-page .hero h1{font-size:clamp(2.3rem,7.5vw,3.25rem)!important}.ss-framework ol{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.ss-framework li{min-height:116px}}
 @media(max-width:520px){.ss-framework .ss-framework-inner{padding:0 20px}.ss-framework ol{grid-template-columns:repeat(2,minmax(0,1fr))}.ss-framework li{padding:12px;min-height:104px}}
+
+/* Final typography and colour reconciliation, SS15 reference. */
+:root{--ss-paper:#f8f5ee;--ss-ink:#253040;--ss-muted:#596473;--ss-brand-initial:#b38b31;--ink:var(--ss-ink);--charcoal:var(--ss-ink);--muted:var(--ss-muted);--soft:var(--ss-paper)}
+body{background-color:var(--ss-ivory);color:var(--ss-ink)}
+body .site-nav,body .site-dropdown summary,body .site-dropdown-links a,body .nav-links a:not(.btn),body .navlinks a:not(.btn){color:var(--ss-navy)}
+body .site-dropdown-links{border-color:var(--ss-line)}
+body .site-dropdown-links a:hover,body .site-nav .site-menu.is-open{background:var(--ss-ivory)}
+body .eyebrow,body .kicker,body .resource-kicker{font-family:var(--ss-sans);font-weight:700;letter-spacing:.10em}
+body .hero h1,body .section h2{overflow-wrap:break-word}
+body.home-page .balanced-problems summary,body .site-nav .site-menu a,body .site-nav .site-menu summary{font-family:var(--ss-sans)}
+body .proof-summary-grid article>strong,body .proof-card .big,body .footer-business>strong{font-family:var(--ss-serif);font-weight:600}
+body .footer-business>strong{font-size:1.7rem;color:var(--ss-light-gold)}
+body footer.footer,body.home-page footer#contact.footer,body .navy-section{background:var(--ss-navy);color:#e0e3e8}
+body.home-page .single-work-section{background:var(--ss-ivory)}
+body.home-page .balanced-problems details{background:var(--ss-paper);border-color:var(--ss-line)}
+body .ss-framework .ss-step-caption{font-family:var(--ss-sans);font-size:.93rem;line-height:1.35}
+body .ss-framework li{border-top-color:var(--ss-gold)}
+body .ss-framework li:last-child{background:var(--ss-gold)}
+body .ss-framework .ss-framework-tagline{color:var(--ss-light-gold)}
+/* Use a wider logo lockup where space permits: the tagline is deliberately one line. */
+body .site-nav .site-brand{flex:0 0 clamp(220px,23vw,300px);width:clamp(220px,23vw,300px)}
+body .site-nav .site-brand img{width:100%;height:auto}
+@media(max-width:1100px) and (min-width:901px){body .site-nav .site-brand{flex-basis:220px;width:220px}body .site-nav .site-menu{gap:12px}}
+@media(max-width:900px){body .site-nav .site-brand{flex-basis:min(245px,64vw);width:min(245px,64vw)}}
