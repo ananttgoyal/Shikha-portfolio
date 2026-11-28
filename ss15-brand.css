@@ -1,0 +1,38 @@
+/* SS15 final identity — navy, ivory, champagne gold. */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Lato:wght@400;700;900&display=swap');
+:root{--ss-navy:#0c1628;--ss-panel:#1e2c47;--ss-gold:#cba54f;--ss-light-gold:#e1c581;--ss-ivory:#f4efe3;--ss-line:#ded3bf;--ss-dark-gold:#79591d;--ss-serif:'EB Garamond',Georgia,'Times New Roman',serif;--ss-sans:Lato,Arial,sans-serif;--navy:var(--ss-navy);--navy2:var(--ss-panel);--gold:var(--ss-gold);--ivory:var(--ss-ivory);--cream:var(--ss-ivory);--line:var(--ss-line)}
+body,body.home-page,body.editorial-page,body.videos-page{font-family:var(--ss-sans);line-height:1.65}
+body h1,body h2,body:has(.site-nav) h1,body:has(.site-nav) h2,body.home-page .hero h1,body.home-page .section h2,body.home-page .audience-section h2{font-family:var(--ss-serif)!important;font-weight:600!important;letter-spacing:-.015em!important;text-transform:none!important}
+body h3,body h4,body:has(.site-nav) h3,body:has(.site-nav) h4,body.home-page .single-work-card h3{font-family:var(--ss-sans)!important;font-weight:700!important;letter-spacing:normal!important}
+body.home-page .hero h1{font-size:clamp(2.5rem,4.5vw,4.15rem)!important;line-height:1.04!important}
+body.home-page .section-head h2,body.home-page .audience-section h2{font-size:clamp(2rem,3.1vw,2.85rem);line-height:1.12}
+body .site-nav,body .nav{background:var(--ss-ivory);border-bottom:1px solid var(--ss-line);box-shadow:none}
+body .site-nav .site-menu,body .site-dropdown summary,body .btn,body .editorial-button,body button,body input,body select,body textarea{font-family:var(--ss-sans)}
+body img[src*="ss15-wordmark.svg"]{height:auto;object-fit:contain}
+body .site-nav .site-score,body .btn-primary{background:var(--ss-navy);color:var(--ss-ivory)!important;border-color:var(--ss-navy);box-shadow:none}
+body .btn-primary:hover,body .site-nav .site-score:hover{background:var(--ss-panel)}
+body .btn,body .editorial-button,body .site-score{border-radius:5px!important}
+body .btn-gold{background:var(--ss-gold);color:var(--ss-navy)!important}
+body .btn-outline{border-color:var(--ss-navy)}
+body.home-page .hero,body.home-page .audience-section{background:var(--ss-ivory)}
+body.home-page .hero h1 .gold,body.home-page .hero .eyebrow,body.home-page .kicker{color:var(--ss-dark-gold)}
+body .hero-photo-proof strong{font-family:var(--ss-serif);font-size:1.25rem}
+body.home-page .hero-photo-proof{border-top:1px solid var(--ss-line)}
+body .card,body .audience-card,body .package-card,body .tool-card{border-radius:6px;box-shadow:none}
+body .site-dropdown-links{border-radius:5px}
+body a:focus-visible,body button:focus-visible,body summary:focus-visible,body input:focus-visible,body select:focus-visible,body textarea:focus-visible{outline:3px solid #a47b2c;outline-offset:3px}
+body .ss-framework{background:var(--ss-navy);color:var(--ss-ivory);padding:clamp(40px,6vw,76px) 0;border-block:1px solid var(--ss-gold)}
+.ss-framework .ss-framework-inner{max-width:1240px;margin:auto;padding:0 28px}
+.ss-framework .ss-framework-kicker{margin:0 0 12px;color:var(--ss-light-gold);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+body .ss-framework h2{color:var(--ss-ivory);font-size:clamp(2.2rem,4vw,3.35rem);line-height:1.08;margin:0 0 12px}
+.ss-framework .ss-framework-intro{max-width:65ch;color:#dedee3;margin:0 0 30px}
+.ss-framework ol{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:end;gap:4px;list-style:none;padding:0;margin:0}
+.ss-framework li{min-width:0;min-height:calc(104px + var(--step)*18px);padding:15px 12px 18px;border-top:2px solid var(--ss-gold);background:var(--ss-panel);display:flex;flex-direction:column;gap:7px}
+.ss-framework li:last-child{background:var(--ss-gold);color:var(--ss-navy)}
+.ss-framework .ss-step-no{color:var(--ss-light-gold);font-size:.85rem;font-weight:700;letter-spacing:.1em}
+.ss-framework li:last-child .ss-step-no{color:var(--ss-navy)}
+.ss-framework .ss-step-name{font-weight:900;font-size:clamp(.78rem,1.2vw,1rem);letter-spacing:.045em;text-transform:uppercase}
+.ss-framework .ss-step-caption{font-family:var(--ss-serif);font-size:1.13rem;line-height:1.2}
+.ss-framework .ss-framework-tagline{border-top:1px solid var(--ss-gold);padding-top:20px;margin:24px 0 0;text-align:center;color:var(--ss-light-gold);font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+@media(max-width:900px){body.home-page .hero h1{font-size:clamp(2.3rem,7.5vw,3.25rem)!important}.ss-framework ol{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.ss-framework li{min-height:116px}}
+@media(max-width:520px){.ss-framework .ss-framework-inner{padding:0 20px}.ss-framework ol{grid-template-columns:repeat(2,minmax(0,1fr))}.ss-framework li{padding:12px;min-height:104px}}
