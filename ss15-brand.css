@@ -60,3 +60,12 @@ body .site-nav .site-brand{flex:0 0 clamp(220px,23vw,300px);width:clamp(220px,23
 body .site-nav .site-brand img{width:100%;height:auto}
 @media(max-width:1100px) and (min-width:901px){body .site-nav .site-brand{flex-basis:220px;width:220px}body .site-nav .site-menu{gap:12px}}
 @media(max-width:900px){body .site-nav .site-brand{flex-basis:min(245px,64vw);width:min(245px,64vw)}}
+
+/* Founder portrait: consistent 4:5 framing and a restrained SS15 gold edge. */
+body.home-page .hero .hero-visual{max-width:380px;width:100%;padding:8px;background:var(--ss-ivory);border:1px solid var(--ss-gold);border-radius:6px;box-shadow:none}
+body.home-page .hero .hero-photo-frame{display:block;aspect-ratio:auto;height:auto;overflow:visible}
+body.home-page .hero .hero-photo{display:block;width:100%;height:auto;aspect-ratio:4 / 5;object-fit:cover;object-position:50% 18%;border-radius:3px}
+body.home-page .hero .hero-photo-proof{position:static;max-width:none;margin:0;padding:12px 6px 5px;background:transparent;color:var(--ss-navy);border:0;border-top:1px solid var(--ss-line);border-radius:0}
+body.home-page .hero .hero-photo-proof strong{font-family:var(--ss-serif);font-size:1.5rem;line-height:1.2}
+body.home-page .hero .hero-photo-proof small{font-family:var(--ss-sans);font-size:.76rem;line-height:1.5;color:var(--ss-dark-gold)}
+@media(max-width:700px){body.home-page .hero .hero-visual{max-width:340px;justify-self:center}}
