@@ -106,3 +106,38 @@ body .ss-kahani h2{color:var(--ss-navy);font-size:clamp(2rem,4vw,3.15rem);line-h
 .ss-kahani-primary{display:inline-flex;align-items:center;background:var(--ss-navy);color:var(--ss-ivory)!important;padding:12px 18px;min-height:44px;border-radius:4px;font-weight:700;text-decoration:none;font-size:.88rem}
 .ss-kahani-secondary{color:var(--ss-dark-gold)!important;font-size:.88rem;text-decoration:underline;text-underline-offset:4px;font-weight:700}
 @media(max-width:660px){.ss-kahani-inner{grid-template-columns:1fr}.ss-kahani-mark>strong br{display:none}.ss-kahani-mark>strong{font-size:clamp(2.8rem,11vw,4.5rem)}.ss-kahani-mark>strong br:after{content:' '}.ss-kahani-mark{padding:24px}.ss-kahani-count{margin-top:16px}.ss-kahani-actions{align-items:start;flex-direction:column}}
+
+/* Visual proof cards and YouTube episodes. */
+#fieldwork-reels,#meri-kahani{scroll-margin-top:140px}
+.ss-fieldwork-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.ss-fieldwork-cover{display:block;position:relative;aspect-ratio:480/340;overflow:hidden;background:var(--ss-navy)}
+.ss-fieldwork-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.ss-fieldwork-play,.ss-kahani-play{position:absolute;bottom:10px;right:10px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ss-navy);color:#fff;font-size:.85rem;box-shadow:0 1px 6px #0005}
+.ss-fieldwork-card-body{padding:15px 16px 18px;display:flex;flex:1;flex-direction:column}
+body .ss-fieldwork-card h3{margin:8px 0 7px;font-size:1.08rem}
+.ss-fieldwork-card p{margin:0 0 14px;font-size:.88rem;line-height:1.5}
+.ss-fieldwork-type{text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:32px}
+.ss-fieldwork-cover:focus-visible,.ss-kahani-episode:focus-visible,.ss-kahani-channel-card:focus-visible{outline:3px solid var(--ss-gold);outline-offset:-3px}
+.ss-kahani-visual-inner{max-width:1184px;margin:auto}
+.ss-kahani-visual-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:20px}
+.ss-kahani-visual-head p:not(.ss-kahani-kicker){margin:0;max-width:72ch;line-height:1.55;color:var(--ss-ink)}
+.ss-kahani-series-count{display:flex;align-items:center;gap:12px;border-left:1px solid var(--ss-line);padding-left:24px;flex-shrink:0}
+.ss-kahani-series-count strong{font:600 3.4rem/1 var(--ss-serif);color:var(--ss-dark-gold)}
+.ss-kahani-series-count span{font-size:.76rem;font-weight:700;max-width:90px;text-transform:uppercase;letter-spacing:.06em;line-height:1.4}
+.ss-kahani-episode-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ss-kahani-episode,.ss-kahani-channel-card{display:block;overflow:hidden;background:#fffdf8;border:1px solid var(--ss-line);border-radius:5px;text-decoration:none;color:var(--ss-navy)}
+.ss-kahani-thumb,.ss-kahani-channel-photo{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--ss-navy)}
+.ss-kahani-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ss-kahani-play{width:42px;height:30px;border-radius:8px;background:#d51d26;right:12px;bottom:12px}
+.ss-kahani-channel-photo{display:grid;grid-template-columns:42% 58%;align-items:center;color:var(--ss-ivory)}
+.ss-kahani-channel-photo img{height:100%;width:100%;object-fit:cover;object-position:center 25%;min-height:0}
+.ss-kahani-channel-photo div{padding:12px;display:flex;flex-direction:column;gap:5px}
+.ss-kahani-channel-photo small{font-size:.55rem;font-weight:700;color:var(--ss-light-gold);letter-spacing:.1em}
+.ss-kahani-channel-photo strong{font:600 clamp(1.35rem,2.5vw,2.2rem)/1.05 var(--ss-serif)}
+.ss-kahani-channel-photo span{font-size:.72rem;color:var(--ss-light-gold)}
+.ss-kahani-episode-copy{padding:13px 15px 16px}
+.ss-kahani-episode-copy>span{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--ss-dark-gold)}
+body .ss-kahani-episode-copy h3{font-size:1rem;line-height:1.35;color:var(--ss-navy);margin:5px 0 10px}
+.ss-kahani-episode-copy small{font-size:.82rem;color:var(--ss-dark-gold);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:720px){.ss-kahani-visual-head{align-items:start;flex-direction:column;gap:12px}.ss-kahani-series-count{padding:0;border:0}.ss-kahani-series-count strong{font-size:2.5rem}.ss-kahani-episode-grid{display:flex;overflow:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.ss-kahani-episode,.ss-kahani-channel-card{flex:0 0 min(83%,360px);scroll-snap-align:start}.ss-kahani-channel-photo strong{font-size:1.7rem}.ss-fieldwork-card{flex-basis:76%}}
+@media(max-width:560px){#fieldwork-reels,#meri-kahani{scroll-margin-top:110px}.ss-fieldwork-card-body{padding:12px 14px 16px}}
