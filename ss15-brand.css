@@ -88,3 +88,21 @@ body .ss-fieldwork-card h3{color:var(--ss-ivory);font-size:1.1rem;line-height:1.
 .ss-fieldwork-more a{color:var(--ss-light-gold);font-weight:700;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:1000px){.ss-fieldwork-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.ss-fieldwork-inner{padding:0 20px}.ss-fieldwork-heading{flex-direction:column;align-items:start}.ss-fieldwork-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}.ss-fieldwork-card{flex:0 0 84%;scroll-snap-align:start}.ss-fieldwork-card p{font-size:.88rem}}
+
+/* Meri Kahani — founder series */
+body .ss-kahani{padding:clamp(32px,5vw,64px) 24px;background:var(--ss-ivory);color:var(--ss-navy)}
+.ss-kahani-inner{max-width:1160px;margin:auto;display:grid;grid-template-columns:minmax(230px,.75fr) minmax(0,1.25fr);border:1px solid var(--ss-line);background:#fffdf8}
+.ss-kahani-mark{background:var(--ss-navy);color:var(--ss-light-gold);padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;align-items:start;justify-content:center;border-top:3px solid var(--ss-gold)}
+.ss-kahani-mark>span,.ss-kahani-mark>small{font-size:.69rem;font-weight:700;letter-spacing:.13em}
+.ss-kahani-mark>strong{font-family:var(--ss-serif);font-size:clamp(3.4rem,7vw,5.6rem);font-weight:600;line-height:.87;color:var(--ss-ivory);margin:22px 0}
+.ss-kahani-mark>strong span{color:var(--ss-gold)}
+.ss-kahani-count{display:flex;align-items:center;gap:10px;margin-top:24px;padding-top:16px;border-top:1px solid #6d644f;font-size:2rem;line-height:1.15;font-family:var(--ss-serif)}
+.ss-kahani-count span{font:700 .65rem/1.4 var(--ss-sans);letter-spacing:.08em;max-width:90px}
+.ss-kahani-copy{padding:clamp(24px,4vw,48px);align-self:center}
+.ss-kahani-kicker{color:var(--ss-dark-gold);font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;font-weight:700;margin:0 0 10px}
+body .ss-kahani h2{color:var(--ss-navy);font-size:clamp(2rem,4vw,3.15rem);line-height:1.1;margin:0 0 16px}
+.ss-kahani-copy>p:not(.ss-kahani-kicker){color:#253040;font-size:.99rem;line-height:1.65;margin:0 0 12px}
+.ss-kahani-actions{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;margin-top:22px}
+.ss-kahani-primary{display:inline-flex;align-items:center;background:var(--ss-navy);color:var(--ss-ivory)!important;padding:12px 18px;min-height:44px;border-radius:4px;font-weight:700;text-decoration:none;font-size:.88rem}
+.ss-kahani-secondary{color:var(--ss-dark-gold)!important;font-size:.88rem;text-decoration:underline;text-underline-offset:4px;font-weight:700}
+@media(max-width:660px){.ss-kahani-inner{grid-template-columns:1fr}.ss-kahani-mark>strong br{display:none}.ss-kahani-mark>strong{font-size:clamp(2.8rem,11vw,4.5rem)}.ss-kahani-mark>strong br:after{content:' '}.ss-kahani-mark{padding:24px}.ss-kahani-count{margin-top:16px}.ss-kahani-actions{align-items:start;flex-direction:column}}
